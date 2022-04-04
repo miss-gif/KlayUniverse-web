@@ -1,0 +1,25 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #000;
+  color: #fff;
+  height: 3000px;
+}
+
+img {
+  display: block;
+}
+
+:root {
+  --pointText: #5cffc0;
+  --grayText: #686868;
+}
+/*# sourceMappingURL=common.css.map */
