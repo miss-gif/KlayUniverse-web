@@ -135,3 +135,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+a {
+  color: #fff;
+  border: 0;
+  text-decoration: dashed;
+}

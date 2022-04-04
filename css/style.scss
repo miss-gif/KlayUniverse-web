@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #000;
+  color: #fff;
+  height: 3000px;
+}
+
+// 색상 등록
+:root {
+  --pointText: #5cffc0;
+  --grayText: #686868;
+}
+
+// 중앙 정렬
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// text 호버 효과
+@mixin text_hover {
+  cursor: pointer;
+  color: var(--pointText);
+}
+
+h2 {
+  font-size: 72px;
+  line-height: 100px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 48px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+button {
+  width: 280px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  font-family: "Lato", sans-serif;
+
+  &:hover {
+    background: linear-gradient(to right, #31f8ab, #39c2ee);
+    border: 0;
+    color: #101010;
+  }
+}
+
+.pointColor {
+  color: var(--pointText);
+}
+
+// header 영역
+.wrapper {
+  header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 28px 0;
+    z-index: 99;
+    // @include center();
+    .inner {
+      position: relative;
+      width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      margin-top: 50-28px;
+
+      h1 {
+      }
+
+      nav {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        ul {
+          display: flex;
+
+          li {
+            margin-left: 125px;
+
+            a {
+              &:hover {
+                @include text_hover();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// main 영역
+.wrapper {
+  main {
+    section.main_VIDEO {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      @include center();
+      flex-direction: column;
+
+      video {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: #333; // 영상 대신 임시 사용
+        z-index: -1;
+      }
+
+      h2 {
+        span {
+        }
+      }
+
+      button {
+        margin-top: 68px;
+      }
+
+      .mouseScroll {
+        position: absolute;
+        bottom: 38px;
+
+        p {
+          margin-top: 15px;
+          color: rgba(#5cffc0, 0.3);
+          font-size: 14px;
+        }
+      }
+    }
+
+    section.PROMO {
+      height: 100vh;
+      @include center();
+      flex-direction: column;
+      h3 {
+      }
+
+      video {
+        margin-top: 35px;
+        width: 1088px;
+        height: 612px;
+        background-color: #616161;
+      }
+    }
+
+    section.UNIVERSE {
+      height: 100vh;
+      @include center();
+      flex-direction: column;
+
+      h3 {
+      }
+
+      h4 {
+        margin-top: 40px;
+        margin-bottom: 60px;
+      }
+
+      ul {
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        margin-bottom: 80px;
+        li {
+          width: 446px;
+          height: 380px;
+          background-color: #156;
+          padding: 10px;
+          margin: 5px;
+          flex-direction: column;
+          border-radius: 16px;
+          img {
+            border-radius: 12px;
+          }
+
+          p {
+            text-align: left;
+            padding: 10px;
+          }
+        }
+      }
+    }
+
+    section.ROADMAP {
+      height: 100vh;
+      @include center();
+      flex-direction: column;
+      h3 {
+      }
+      ul {
+        position: relative;
+        width: 1162px;
+        height: 379px;
+        background-color: #156;
+        li {
+          position: absolute;
+          display: flex;
+          .title {
+            width: 114px;
+            height: 379px;
+            background-color: #8745;
+          }
+          .content {
+            width: 100%;
+            height: 379px;
+            background-color: blue;
+            // display: flex;
+            .text {
+              p {
+              }
+              .img {
+              }
+            }
+          }
+        }
+      }
+    }
+
+    section.TEAM {
+      height: 100vh;
+      @include center();
+      flex-direction: column;
+    }
+
+    section.PARTNERS {
+      height: 100vh;
+      @include center();
+      flex-direction: column;
+    }
+
+    section.COMMUNITY {
+      height: 100vh;
+      @include center();
+      flex-direction: column;
+    }
+  }
+}
+
+// footer 영역
+.wrapper {
+  footer {
+  }
+}
