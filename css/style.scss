@@ -28,6 +28,7 @@
     font-size: 16px;
     font-weight: 400;
     background-color: #010101;
+    background-color: rgb(60, 105, 67); // 임시 색상
     color: #fff;
   }
 
@@ -84,7 +85,7 @@ section {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid #fff; // 영역 구분
+  border: 1px solid #fff; // 임시 영역 구분
 }
 
 // header 영역
@@ -298,9 +299,11 @@ section {
       h3 {
       }
       h4 {
+        margin-bottom: 40px;
       }
       ul {
         display: flex;
+        margin-bottom: 80px;
         li {
           width: 200px;
           height: 280px;
@@ -323,12 +326,68 @@ section {
           }
         }
       }
+      article {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        animation: 3s ease-in 1s infinite reverse both running slidein;
+        .rotation_text {
+          display: flex;
+          margin: 0 10px;
+          bottom: 0;
+          position: relative;
+          animation-name: rotation_text; // 애니메이션 명
+          animation-duration: 10s; // 완료까지 걸리는 시간 설정
+          animation-timing-function: linear; // 속도 곡선 설정
+          // animation-delay: 2s; // 지연 설정
+          animation-iteration-count: infinite; // 반복 설정
+          // animation-direction: alternate; // 재생 방향 설정
+          p {
+            font-size: 36px;
+            font-weight: 300;
+            margin-right: 16px;
+          }
+          img {
+          }
+        }
+        @keyframes rotation_text {
+          0% {
+            left: 0px;
+            top: 0px;
+          }
+          100% {
+            left: -100%;
+            top: 0px;
+          }
+        }
+      }
     }
 
     section.PARTNERS {
       height: 100vh;
       @include center();
       flex-direction: column;
+      width: 1400px;
+      margin: 0 auto;
+      h3 {
+      }
+      h4 {
+        margin-bottom: 30px;
+      }
+      ul {
+        @include center();
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          @include center();
+          width: 210px;
+          height: 115px;
+          margin: 7.5px;
+          font-size: 32px;
+          border-radius: 16px;
+          background-color: #666;
+        }
+      }
     }
 
     section.COMMUNITY {

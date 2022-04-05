@@ -15,6 +15,7 @@
   font-size: 16px;
   font-weight: 400;
   background-color: #010101;
+  background-color: #3c6943;
   color: #fff;
 }
 
@@ -287,10 +288,15 @@ section {
           flex-direction: column;
 }
 
+.wrapper main section.TEAM h4 {
+  margin-bottom: 40px;
+}
+
 .wrapper main section.TEAM ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 80px;
 }
 
 .wrapper main section.TEAM ul li {
@@ -315,6 +321,62 @@ section {
   font-size: 16px;
 }
 
+.wrapper main section.TEAM article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  animation: 3s ease-in 1s infinite reverse both running slidein;
+}
+
+.wrapper main section.TEAM article .rotation_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 10px;
+  bottom: 0;
+  position: relative;
+  -webkit-animation-name: rotation_text;
+          animation-name: rotation_text;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.wrapper main section.TEAM article .rotation_text p {
+  font-size: 36px;
+  font-weight: 300;
+  margin-right: 16px;
+}
+
+@-webkit-keyframes rotation_text {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    left: -100%;
+    top: 0px;
+  }
+}
+
+@keyframes rotation_text {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    left: -100%;
+    top: 0px;
+  }
+}
+
 .wrapper main section.PARTNERS {
   height: 100vh;
   display: -webkit-box;
@@ -330,6 +392,45 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.wrapper main section.PARTNERS h4 {
+  margin-bottom: 30px;
+}
+
+.wrapper main section.PARTNERS ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrapper main section.PARTNERS ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 210px;
+  height: 115px;
+  margin: 7.5px;
+  font-size: 32px;
+  border-radius: 16px;
+  background-color: #666;
 }
 
 .wrapper main section.COMMUNITY {
