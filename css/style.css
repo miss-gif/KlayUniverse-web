@@ -287,6 +287,34 @@ section {
           flex-direction: column;
 }
 
+.wrapper main section.TEAM ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper main section.TEAM ul li {
+  width: 200px;
+  height: 280px;
+  background-color: #156;
+  margin-left: 40px;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.wrapper main section.TEAM ul li .img_area img {
+  width: 100%;
+}
+
+.wrapper main section.TEAM ul li p {
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.wrapper main section.TEAM ul li p span {
+  font-size: 16px;
+}
+
 .wrapper main section.PARTNERS {
   height: 100vh;
   display: -webkit-box;

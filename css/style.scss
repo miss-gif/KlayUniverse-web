@@ -295,6 +295,34 @@ section {
       height: 100vh;
       @include center();
       flex-direction: column;
+      h3 {
+      }
+      h4 {
+      }
+      ul {
+        display: flex;
+        li {
+          width: 200px;
+          height: 280px;
+          background-color: #156;
+          margin-left: 40px;
+          border-radius: 16px;
+          padding: 10px;
+          .img_area {
+            img {
+              width: 100%;
+            }
+          }
+          p {
+            font-size: 26px;
+            line-height: 26px;
+
+            span {
+              font-size: 16px;
+            }
+          }
+        }
+      }
     }
 
     section.PARTNERS {
