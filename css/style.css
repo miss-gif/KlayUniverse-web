@@ -261,6 +261,12 @@ section {
   position: absolute;
 }
 
+.wrapper main section.ROADMAP article ul li:nth-child(1) img {
+  position: absolute;
+  top: 55px;
+  right: 55px;
+}
+
 .wrapper main section.ROADMAP article ul li:nth-child(2) {
   position: absolute;
   display: none;
@@ -300,9 +306,9 @@ section {
 }
 
 .wrapper main section.TEAM ul li {
-  width: 200px;
-  height: 280px;
-  background-color: #156;
+  width: 260px;
+  height: 330px;
+  background-color: #000;
   margin-left: 40px;
   border-radius: 16px;
   padding: 10px;
@@ -325,17 +331,21 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   width: 100%;
-  animation: 3s ease-in 1s infinite reverse both running slidein;
+  height: 80px;
+  background-color: #000;
 }
 
 .wrapper main section.TEAM article .rotation_text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 10px;
   bottom: 0;
   position: relative;
@@ -353,6 +363,7 @@ section {
   font-size: 36px;
   font-weight: 300;
   margin-right: 16px;
+  white-space: nowrap;
 }
 
 @-webkit-keyframes rotation_text {
@@ -448,5 +459,143 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.wrapper main section.COMMUNITY h4 {
+  margin-bottom: 60px;
+}
+
+.wrapper main section.COMMUNITY ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 120px;
+}
+
+.wrapper main section.COMMUNITY ul li {
+  width: 500px;
+  height: 360px;
+  padding: 10px;
+  margin: 0 25px;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.wrapper main section.COMMUNITY ul li img {
+  width: 100%;
+}
+
+.wrapper footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper footer .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30vh;
+}
+
+.wrapper footer .top p {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px;
+}
+
+.wrapper footer .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 45vh;
+  background-image: url(/img/footer/footerBG.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper footer .bottom .layout {
+  width: 1400px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper footer .bottom .layout .left p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.wrapper footer .bottom .layout .left form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 320px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #156;
+}
+
+.wrapper footer .bottom .layout .left form input {
+  text-align: left;
+  outline: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.wrapper footer .bottom .layout .left form button {
+  width: 65px;
+  border: 0;
+}
+
+.wrapper footer .bottom .layout .right email {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.wrapper footer .bottom .layout .right ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */
