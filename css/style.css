@@ -14,8 +14,7 @@
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  background-color: #010101;
-  background-color: #3c6943;
+  background-color: #222;
   color: #fff;
 }
 
@@ -41,6 +40,10 @@
 }
 
 * button {
+  cursor: pointer;
+}
+
+* button.point {
   width: 280px;
   height: 60px;
   font-size: 20px;
@@ -49,10 +52,9 @@
   color: #fff;
   border: 1px solid #fff;
   font-family: "Lato", sans-serif;
-  cursor: pointer;
 }
 
-* button:hover {
+* button.point:hover {
   background: -webkit-gradient(linear, left top, right top, from(#31f8ab), to(#39c2ee));
   background: linear-gradient(to right, #31f8ab, #39c2ee);
   border: 0;
@@ -81,7 +83,52 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
+}
+
+.ConnectWallet {
+  position: fixed;
+  top: 130px;
+  right: 180px;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 50%;
   border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.ConnectWallet:hover {
+  border: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#31f8ab), to(#39c2ee));
+  background: linear-gradient(to right, #31f8ab, #39c2ee);
+}
+
+.ConnectWallet:hover::before {
+  position: absolute;
+  content: "Connect Wallet";
+  width: 150px;
+  height: 35px;
+  top: 10px;
+  left: -180px;
+  background-color: #fff;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.ConnectWallet img {
+  width: 100%;
 }
 
 .wrapper header {
@@ -511,7 +558,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 30vh;
+  height: 50vh;
 }
 
 .wrapper footer .top p {
@@ -535,14 +582,18 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  height: 45vh;
-  background-image: url(/img/footer/footerBG.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  height: 50vh;
+  position: relative;
 }
 
-.wrapper footer .bottom .layout {
+.wrapper footer .bottom > img {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.wrapper footer .bottom .wrapper .layout {
   width: 1400px;
   margin: 0 auto;
   display: -webkit-box;
@@ -551,16 +602,17 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 80px;
 }
 
-.wrapper footer .bottom .layout .left p {
+.wrapper footer .bottom .wrapper .layout .left p {
   text-align: left;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 30px;
 }
 
-.wrapper footer .bottom .layout .left form {
+.wrapper footer .bottom .wrapper .layout .left form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -570,32 +622,91 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
   width: 320px;
   height: 50px;
   border-radius: 15px;
-  background-color: #156;
+  background-color: #000;
 }
 
-.wrapper footer .bottom .layout .left form input {
+.wrapper footer .bottom .wrapper .layout .left form input {
   text-align: left;
+  font-size: 16px;
   outline: none;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+}
+
+.wrapper footer .bottom .wrapper .layout .left form button {
+  font-size: 16px;
   background-color: transparent;
   border: 0;
 }
 
-.wrapper footer .bottom .layout .left form button {
-  width: 65px;
-  border: 0;
-}
-
-.wrapper footer .bottom .layout .right email {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.wrapper footer .bottom .layout .right ul {
+.wrapper footer .bottom .wrapper .layout .right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper footer .bottom .wrapper .layout .right email {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.wrapper footer .bottom .wrapper .layout .right p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper footer .bottom .wrapper .layout .right p span {
+  margin-left: 30px;
+  position: relative;
+}
+
+.wrapper footer .bottom .wrapper .layout .right p span::before {
+  content: "";
+  width: 2px;
+  height: 15px;
+  background-color: #fff;
+  position: absolute;
+  left: -15px;
+}
+
+.wrapper footer .bottom .wrapper .layout .right ul {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper footer .bottom .wrapper .layout .right ul li {
+  width: 40px;
+  margin: 0 5px;
+}
+
+.wrapper footer .bottom .wrapper .layout .right ul li a > img {
+  width: 100%;
+}
+
+.wrapper footer .bottom .wrapper > p {
+  font-size: 14px;
+  line-height: 29px;
 }
 /*# sourceMappingURL=style.css.map */

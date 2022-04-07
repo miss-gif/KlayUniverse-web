@@ -27,8 +27,8 @@
     font-family: "Lato", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    background-color: #010101;
-    background-color: rgb(60, 105, 67); // 임시 색상
+    // background-color: #010101;
+    background-color: #222; // 임시 색상
     color: #fff;
   }
 
@@ -54,6 +54,10 @@
   }
 
   button {
+    cursor: pointer;
+  }
+
+  button.point {
     width: 280px;
     height: 60px;
     font-size: 20px;
@@ -62,7 +66,6 @@
     color: #fff;
     border: 1px solid #fff;
     font-family: "Lato", sans-serif;
-    cursor: pointer;
 
     &:hover {
       background: linear-gradient(to right, #31f8ab, #39c2ee);
@@ -85,7 +88,43 @@ section {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid #fff; // 임시 영역 구분
+  // border: 1px solid #fff; // 임시 영역 구분
+}
+
+.ConnectWallet {
+  position: fixed;
+  top: 130px;
+  right: 180px;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+  &:hover {
+    border: 0;
+    background: linear-gradient(to right, #31f8ab, #39c2ee);
+  }
+  &:hover::before {
+    position: absolute;
+    content: "Connect Wallet";
+    width: 150px;
+    height: 35px;
+    top: 10px;
+    left: -180px;
+    background-color: #fff;
+    color: #000;
+    @include center();
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  img {
+    width: 100%;
+    &:hover {
+    }
+  }
 }
 
 // header 영역
@@ -260,6 +299,7 @@ section {
             width: 100%;
             height: 100%;
             padding: 42px;
+
             p {
               text-align: left;
               font-size: 16px;
@@ -299,14 +339,18 @@ section {
       height: 100vh;
       @include center();
       flex-direction: column;
+
       h3 {
       }
+
       h4 {
         margin-bottom: 40px;
       }
+
       ul {
         display: flex;
         margin-bottom: 80px;
+
         li {
           width: 260px;
           height: 330px;
@@ -314,11 +358,13 @@ section {
           margin-left: 40px;
           border-radius: 16px;
           padding: 10px;
+
           .img_area {
             img {
               width: 100%;
             }
           }
+
           p {
             font-size: 26px;
             line-height: 26px;
@@ -329,6 +375,7 @@ section {
           }
         }
       }
+
       // 문자열이 돌아가는 부분
       article {
         display: flex;
@@ -336,6 +383,7 @@ section {
         width: 100%;
         height: 80px;
         background-color: #000;
+
         .rotation_text {
           @include center();
           margin: 0 10px;
@@ -353,14 +401,17 @@ section {
             margin-right: 16px;
             white-space: nowrap;
           }
+
           img {
           }
         }
+
         @keyframes rotation_text {
           0% {
             left: 0px;
             top: 0px;
           }
+
           100% {
             left: -100%;
             top: 0px;
@@ -375,15 +426,19 @@ section {
       flex-direction: column;
       width: 1400px;
       margin: 0 auto;
+
       h3 {
       }
+
       h4 {
         margin-bottom: 30px;
       }
+
       ul {
         @include center();
         display: flex;
         flex-wrap: wrap;
+
         li {
           @include center();
           width: 210px;
@@ -400,14 +455,18 @@ section {
       height: 100vh;
       @include center();
       flex-direction: column;
+
       h3 {
       }
+
       h4 {
         margin-bottom: 60px;
       }
+
       ul {
         display: flex;
         margin-bottom: 120px;
+
         li {
           width: 500px;
           height: 360px;
@@ -415,6 +474,7 @@ section {
           margin: 0 25px;
           border-radius: 10px;
           background-color: #000;
+
           img {
             width: 100%;
           }
@@ -429,71 +489,124 @@ section {
   footer {
     @include center();
     flex-direction: column;
+
     .top {
       @include center();
-      height: 30vh;
+      height: 50vh;
+
       p {
-        // height: 5vh;
         font-size: 48px;
         font-weight: 600;
         line-height: 72px;
       }
     }
+
     .bottom {
       @include center();
       flex-direction: column;
       width: 100%;
-      height: 45vh;
-      background-image: url(/img/footer/footerBG.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      .layout {
-        width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        .left {
-          p {
-            text-align: left;
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 30px;
-          }
-          form {
-            @include center();
-            width: 320px;
-            height: 50px;
-            border-radius: 15px;
-            background-color: #156;
-            input {
-              text-align: left;
-              outline: none;
-              background-color: transparent;
-              border: 0;
-              // background-color: #fff;
-            }
-            button {
-              width: 65px;
-              border: 0;
-            }
-          }
-        }
-        .right {
-          email {
-            font-size: 20px;
-            font-weight: 600;
-          }
-          p {
-          }
-          ul {
-            display: flex;
-            li {
-            }
-          }
-        }
+      height: 50vh;
+      position: relative;
+
+      > img {
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        width: 100%;
       }
-      p {
+
+      .wrapper {
+        .layout {
+          width: 1400px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 80px;
+
+          .left {
+            p {
+              text-align: left;
+              font-size: 20px;
+              font-weight: 500;
+              margin-bottom: 30px;
+            }
+
+            form {
+              @include center();
+              justify-content: space-between;
+              padding: 10px;
+              width: 320px;
+              height: 50px;
+              border-radius: 15px;
+              background-color: #000;
+
+              input {
+                text-align: left;
+                font-size: 16px;
+                outline: none;
+                background-color: transparent;
+                border: 0;
+                color: #fff;
+              }
+
+              button {
+                font-size: 16px;
+                background-color: transparent;
+                border: 0;
+              }
+            }
+          }
+
+          .right {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+
+            email {
+              font-size: 20px;
+              font-weight: 600;
+              text-decoration: underline;
+            }
+
+            p {
+              display: flex;
+
+              span {
+                margin-left: 30px;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  width: 2px;
+                  height: 15px;
+                  background-color: #fff;
+                  position: absolute;
+                  left: -15px;
+                }
+              }
+            }
+
+            ul {
+              margin-top: 30px;
+              display: flex;
+
+              li {
+                width: 40px;
+                margin: 0 5px;
+                a {
+                  > img {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+        > p {
+          font-size: 14px;
+          line-height: 29px;
+        }
       }
     }
   }
