@@ -3,6 +3,10 @@
   --grayText: #686868;
 }
 
+.hiding {
+  display: none;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -403,12 +407,15 @@ section {
 
 .wrapper main section.ROADMAP article ul li:nth-child(2) {
   position: absolute;
-  display: none;
 }
 
 .wrapper main section.ROADMAP article ul li:nth-child(3) {
   position: absolute;
-  display: none;
+}
+
+.wrapper main section.ROADMAP article ul li:nth-child(3) p {
+  font-size: 32px;
+  color: #666;
 }
 
 .wrapper main section.TEAM {
@@ -432,14 +439,18 @@ section {
   margin-bottom: 40px;
 }
 
-.wrapper main section.TEAM ul {
+.wrapper main section.TEAM .swiper {
+  width: 100%;
+}
+
+.wrapper main section.TEAM .swiper ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 80px;
 }
 
-.wrapper main section.TEAM ul li {
+.wrapper main section.TEAM .swiper ul li {
   width: 260px;
   height: 330px;
   background-color: #000;
@@ -448,16 +459,16 @@ section {
   padding: 10px;
 }
 
-.wrapper main section.TEAM ul li .img_area img {
+.wrapper main section.TEAM .swiper ul li .img_area img {
   width: 100%;
 }
 
-.wrapper main section.TEAM ul li p {
+.wrapper main section.TEAM .swiper ul li p {
   font-size: 26px;
   line-height: 26px;
 }
 
-.wrapper main section.TEAM ul li p span {
+.wrapper main section.TEAM .swiper ul li p span {
   font-size: 16px;
 }
 
@@ -480,13 +491,13 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 10px;
+  margin: 0 30px;
   bottom: 0;
   position: relative;
   -webkit-animation-name: rotation_text;
           animation-name: rotation_text;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -502,23 +513,19 @@ section {
 
 @-webkit-keyframes rotation_text {
   0% {
-    left: 0px;
-    top: 0px;
+    left: 0;
   }
-  100% {
-    left: -100%;
-    top: 0px;
+  to {
+    left: -2000px;
   }
 }
 
 @keyframes rotation_text {
   0% {
-    left: 0px;
-    top: 0px;
+    left: 0;
   }
-  100% {
-    left: -100%;
-    top: 0px;
+  to {
+    left: -2000px;
   }
 }
 
@@ -599,14 +606,18 @@ section {
   margin-bottom: 60px;
 }
 
-.wrapper main section.COMMUNITY ul {
+.wrapper main section.COMMUNITY .swiper {
+  width: 100%;
+}
+
+.wrapper main section.COMMUNITY .swiper ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 120px;
 }
 
-.wrapper main section.COMMUNITY ul li {
+.wrapper main section.COMMUNITY .swiper ul li {
   width: 500px;
   height: 360px;
   padding: 10px;
@@ -615,7 +626,7 @@ section {
   background-color: #000;
 }
 
-.wrapper main section.COMMUNITY ul li img {
+.wrapper main section.COMMUNITY .swiper ul li img {
   width: 100%;
 }
 

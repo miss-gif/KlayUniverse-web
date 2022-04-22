@@ -17,6 +17,10 @@
   color: var(--pointText);
 }
 
+.hiding {
+  display: none;
+}
+
 // COMMON
 * {
   box-sizing: border-box;
@@ -375,7 +379,6 @@ section {
 
             &:nth-child(1) {
               position: absolute;
-              // display: none;
 
               img {
                 position: absolute;
@@ -386,12 +389,14 @@ section {
 
             &:nth-child(2) {
               position: absolute;
-              display: none;
             }
 
             &:nth-child(3) {
               position: absolute;
-              display: none;
+              p {
+                font-size: 32px;
+                color: #666;
+              }
             }
           }
         }
@@ -410,30 +415,33 @@ section {
         margin-bottom: 40px;
       }
 
-      ul {
-        display: flex;
-        margin-bottom: 80px;
+      .swiper {
+        width: 100%;
+        ul {
+          display: flex;
+          margin-bottom: 80px;
 
-        li {
-          width: 260px;
-          height: 330px;
-          background-color: #000;
-          margin-left: 40px;
-          border-radius: 16px;
-          padding: 10px;
+          li {
+            width: 260px;
+            height: 330px;
+            background-color: #000;
+            margin-left: 40px;
+            border-radius: 16px;
+            padding: 10px;
 
-          .img_area {
-            img {
-              width: 100%;
+            .img_area {
+              img {
+                width: 100%;
+              }
             }
-          }
 
-          p {
-            font-size: 26px;
-            line-height: 26px;
+            p {
+              font-size: 26px;
+              line-height: 26px;
 
-            span {
-              font-size: 16px;
+              span {
+                font-size: 16px;
+              }
             }
           }
         }
@@ -449,11 +457,11 @@ section {
 
         .rotation_text {
           @include center();
-          margin: 0 10px;
+          margin: 0 30px;
           bottom: 0;
           position: relative;
           animation-name: rotation_text; // 애니메이션 명
-          animation-duration: 10s; // 완료까지 걸리는 시간 설정
+          animation-duration: 30s; // 완료까지 걸리는 시간 설정
           animation-timing-function: linear; // 속도 곡선 설정
           // animation-delay: 2s; // 지연 설정
           animation-iteration-count: infinite; // 반복 설정
@@ -471,13 +479,11 @@ section {
 
         @keyframes rotation_text {
           0% {
-            left: 0px;
-            top: 0px;
+            left: 0;
           }
 
-          100% {
-            left: -100%;
-            top: 0px;
+          to {
+            left: -2000px;
           }
         }
       }
@@ -525,21 +531,23 @@ section {
       h4 {
         margin-bottom: 60px;
       }
+      .swiper {
+        width: 100%;
+        ul {
+          display: flex;
+          margin-bottom: 120px;
 
-      ul {
-        display: flex;
-        margin-bottom: 120px;
+          li {
+            width: 500px;
+            height: 360px;
+            padding: 10px;
+            margin: 0 25px;
+            border-radius: 10px;
+            background-color: #000;
 
-        li {
-          width: 500px;
-          height: 360px;
-          padding: 10px;
-          margin: 0 25px;
-          border-radius: 10px;
-          background-color: #000;
-
-          img {
-            width: 100%;
+            img {
+              width: 100%;
+            }
           }
         }
       }
