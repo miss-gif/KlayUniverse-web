@@ -28,7 +28,7 @@
     font-size: 16px;
     font-weight: 400;
     // background-color: #010101;
-    background-color: #222; // 임시 색상
+    background-color: rgb(176, 209, 229); // 임시 색상
     color: #fff;
   }
 
@@ -72,6 +72,17 @@
       border: 0;
       color: #101010;
     }
+  }
+
+  button.point2 {
+    width: 280px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-family: "Lato", sans-serif;
   }
 
   .pointColor {
@@ -268,28 +279,26 @@ section {
         margin-bottom: 70px;
       }
 
-      ul {
-        display: flex;
-        margin-bottom: 130px;
-
-        li {
-          width: 320px;
-          height: 270px;
-          padding: 15px;
-          background-color: #000;
-          margin: 0 10px;
-          border-radius: 16px;
-
-          img {
-            width: 100%;
-            border-radius: 12px;
-          }
-
-          p {
-            text-align: left;
-            line-height: 40px;
-
-            span {
+      .swiper {
+        width: 100%;
+        ul.swiper-wrapper {
+          height: 300px;
+          display: flex;
+          margin-bottom: 130px;
+          li.swiper-slide {
+            padding: 15px;
+            margin: 0 10px;
+            border-radius: 16px;
+            background-color: #000;
+            > img {
+              width: 100%;
+              border-radius: 12px;
+            }
+            p {
+              text-align: left;
+              line-height: 35px;
+              span {
+              }
             }
           }
         }
@@ -317,16 +326,29 @@ section {
           padding: 24px 0;
           border-radius: 16px 0 0 16px;
           background-color: #0e0f0f;
+          background-color: #156;
 
           button {
+            position: relative;
             width: 100%;
             border: 0;
             font-size: 32px;
+            margin-bottom: 30px;
 
-            &:hover {
-              background: transparent;
-              color: #fff;
+            &:first-child:before {
+              position: absolute;
+              content: "";
+              width: 4px;
+              height: 50%;
+              background-color: #31f8ab;
+              top: 50%;
+              left: 0;
+              transform: translate(-50%, -50%);
+              border-radius: 10px;
             }
+          }
+          .onClick {
+            color: #31f8ab;
           }
         }
 
