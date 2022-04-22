@@ -16,11 +16,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- CDN에서 Swiper 사용 -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
 <body>
   <div class="ConnectWallet">
-    <img src="./img/s01.png" alt="ConnectWallet">
+    <!-- <img src="" alt="ConnectWallet"> -->
   </div>
   <div class="wrapper">
     <!-- header 시작 -->
@@ -29,7 +32,7 @@
         <h1><a href="#"><img src="./img/klayuniverse_white_logo.png" alt="logo" /></a></h1>
         <nav>
           <ul>
-            <li><a href="#PROMO">PROMO</li></a>
+            <li><a href="#PROMO" class="onClick">PROMO</li></a>
             <li><a href="#UNIVERSE">UNIVERSE</li></a>
             <li><a href="#ROADMAP">ROADMAP</li></a>
             <li><a href="#TEAM">TEAM</li></a>
@@ -45,7 +48,7 @@
     <main>
       <!-- main_VIDEO 시작 -->
       <section id="main_VIDEO" class="main_VIDEO">
-        <video src=""></video>
+        <video autoplay muted loop src="./mp4/main.mp4"></video>
         <h2>
           5,000 Metaverse Worlds, <br />
           <span class="pointColor">On Klaytn Blockchain.</span>
@@ -61,7 +64,7 @@
       <!-- PROMO 시작 -->
       <section id="PROMO" class="PROMO">
         <h3>PROMO VIDEO</h3>
-        <video src=""></video>
+        <video autoplay muted loop src="./mp4/sub.mp4"></video>
       </section>
       <!-- PROMO 종료 -->
 
