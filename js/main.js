@@ -1,5 +1,6 @@
 console.log("연결확인");
 
+// 네비게이션 버튼 컨트롤
 const navList = document.querySelectorAll("nav>ul>li>a");
 
 navList[0].addEventListener("click", function () {
@@ -56,9 +57,9 @@ navList[5].addEventListener("click", function () {
   navList[5].classList.add("onClick");
 });
 
-// 슬라이드 설정
+// UNIVERSE 슬라이드 컨트롤
 
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".UNIVERSE .swiper", {
   direction: "horizontal", // 수평 슬라이드
   // autoplay: {
   //   // 자동 재생 여부
@@ -70,7 +71,7 @@ const swiper = new Swiper(".swiper", {
   slidesPerGroup: 1, // 한 번에 슬라이드 할 개수(전체 개수로 나뉘어야 함)
 });
 
-// ROAD MAP 버튼 기능
+// ROAD MAP 버튼 컨트롤
 
 const roadmapBtn = document.querySelectorAll("#ROADMAP>article>.title>button");
 const roadmapList = document.querySelectorAll("#ROADMAP>article>ul>li");
@@ -102,6 +103,8 @@ roadmapBtn[2].addEventListener("click", function () {
   roadmapList[2].classList.remove("hiding");
 });
 
+// TEAM 슬라이드 컨트롤
+
 new Swiper(".TEAM .swiper", {
   direction: "horizontal", // 수평 슬라이드
   // autoplay: {
@@ -114,6 +117,8 @@ new Swiper(".TEAM .swiper", {
   slidesPerGroup: 1, // 한 번에 슬라이드 할 개수(전체 개수로 나뉘어야 함)
   // mousewheel: true, // 마우스 휠 기능
 });
+
+// COMMUNITY 슬라이드 컨트롤
 
 new Swiper(".COMMUNITY .swiper", {
   direction: "horizontal", // 수평 슬라이드
