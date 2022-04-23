@@ -28,12 +28,22 @@
   scroll-behavior: smooth;
 
   body {
+    position: relative;
     font-family: "Lato", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    // background-color: #010101;
-    background-color: rgb(176, 209, 229); // 임시 색상
+    background-color: #010101df;
+    // background-color: rgb(176, 209, 229); // 임시 색상
     color: #fff;
+    // background-image: url(../img/grid_text.png);
+    &::before {
+      position: absolute;
+      // background-image: url(../img/mapBg.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 999;
+    }
   }
 
   img {
@@ -158,6 +168,30 @@ section {
   img {
     width: 100%;
     &:hover {
+    }
+  }
+  > .modal {
+    @include center();
+    flex-direction: column;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 320px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    background-color: #000;
+    z-index: 10;
+    img {
+      width: 14%;
+      margin-bottom: 25px;
+    }
+    p {
+      font-size: 28px;
+      font-weight: 600;
+      color: #31f8ab;
     }
   }
 }
