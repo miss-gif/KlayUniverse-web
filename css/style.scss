@@ -364,7 +364,6 @@ section {
           padding: 24px 0;
           border-radius: 16px 0 0 16px;
           background-color: #0e0f0f;
-          background-color: #156;
 
           button {
             position: relative;
@@ -459,22 +458,23 @@ section {
             width: 260px;
             height: 330px;
             background-color: #000;
-            margin-left: 40px;
             border-radius: 16px;
             padding: 10px;
 
             .img_area {
+              margin-bottom: 25px;
               img {
                 width: 100%;
               }
             }
+            .title_area {
+              p {
+                font-size: 26px;
+                line-height: 26px;
 
-            p {
-              font-size: 26px;
-              line-height: 26px;
-
-              span {
-                font-size: 16px;
+                span {
+                  font-size: 16px;
+                }
               }
             }
           }
@@ -543,13 +543,14 @@ section {
         flex-wrap: wrap;
 
         li {
+          color: #666;
           @include center();
           width: 210px;
           height: 115px;
           margin: 7.5px;
           font-size: 32px;
           border-radius: 16px;
-          background-color: #666;
+          background-color: #161616;
         }
       }
     }
@@ -572,10 +573,11 @@ section {
           margin-bottom: 120px;
 
           li {
+            @include center();
             width: 500px;
-            height: 360px;
+            height: 330px;
             padding: 10px;
-            margin: 0 25px;
+            // margin: 0 25px;
             border-radius: 10px;
             background-color: #000;
 

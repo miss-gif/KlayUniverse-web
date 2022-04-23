@@ -392,7 +392,6 @@ section {
   padding: 24px 0;
   border-radius: 16px 0 0 16px;
   background-color: #0e0f0f;
-  background-color: #156;
 }
 
 .wrapper main section.ROADMAP article .title button {
@@ -502,21 +501,24 @@ section {
   width: 260px;
   height: 330px;
   background-color: #000;
-  margin-left: 40px;
   border-radius: 16px;
   padding: 10px;
+}
+
+.wrapper main section.TEAM .swiper ul li .img_area {
+  margin-bottom: 25px;
 }
 
 .wrapper main section.TEAM .swiper ul li .img_area img {
   width: 100%;
 }
 
-.wrapper main section.TEAM .swiper ul li p {
+.wrapper main section.TEAM .swiper ul li .title_area p {
   font-size: 26px;
   line-height: 26px;
 }
 
-.wrapper main section.TEAM .swiper ul li p span {
+.wrapper main section.TEAM .swiper ul li .title_area p span {
   font-size: 16px;
 }
 
@@ -616,6 +618,7 @@ section {
 }
 
 .wrapper main section.PARTNERS ul li {
+  color: #666;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -630,7 +633,7 @@ section {
   margin: 7.5px;
   font-size: 32px;
   border-radius: 16px;
-  background-color: #666;
+  background-color: #161616;
 }
 
 .wrapper main section.COMMUNITY {
@@ -666,10 +669,18 @@ section {
 }
 
 .wrapper main section.COMMUNITY .swiper ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 500px;
-  height: 360px;
+  height: 330px;
   padding: 10px;
-  margin: 0 25px;
   border-radius: 10px;
   background-color: #000;
 }
