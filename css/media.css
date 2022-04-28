@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* 화면 너비 0~ 1024px */
+@media (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+  body header {
+    background-color: #156;
+  }
+  body header .inner nav ul li {
+    margin: 16px;
+  }
+  body section.main_VIDEO h2 {
+    font-size: 60px;
+    line-height: 74px;
+  }
+  body section.PROMO h2 {
+    font-size: 32px;
+    line-height: 46px;
+  }
+  body section.PROMO video {
+    width: 85%;
+  }
+}
+
+/* 화면 너비 0~ 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+  body header {
+    background-color: #147;
+  }
+  body header .inner nav {
+    display: none;
+  }
+  body header .inner nav ul li {
+    margin: 1rem;
+  }
+  body section.main_VIDEO h2 {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  body section.PROMO video {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=media.css.map */

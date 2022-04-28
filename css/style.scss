@@ -19,21 +19,23 @@ header {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 99;
   @include center();
-  .inner {
-    position: relative;
-    width: 87.5rem;
-    margin: 0 auto;
-    h1 {
+
+  > .inner {
+    @include center();
+    justify-content: space-between;
+
+    > h1 {
+      margin-left: 3.125rem;
     }
-    nav {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      ul {
+
+    > nav {
+      > ul {
         display: flex;
-        li {
-          margin-left: 7.8125rem;
-          a {
+
+        > li {
+          margin: 1.25rem 3.125em;
+
+          > a {
             &:hover {
               @include text_hover();
             }
@@ -41,8 +43,9 @@ header {
         }
       }
     }
+
     // nav 클릭 후, 추가되는 클래스의 색상
-    .onClick {
+    > .onClick {
       @include text_hover();
     }
   }
@@ -51,25 +54,35 @@ header {
 // main 영역
 main {
   // 공통 옵션
-  section {
+  > section {
+    padding-top: 80px;
     position: relative;
     width: 100%;
     height: 100vh;
     @include center();
     flex-direction: column;
     overflow: hidden;
+
+    > h2 {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 96px;
+    }
   }
 
-  section.main_VIDEO {
-    video {
+  > section.main_VIDEO {
+    padding-top: 0;
+
+    > video {
       position: absolute;
       width: 100%;
       height: 100vh;
       object-fit: cover;
       z-index: -2;
     }
+
     // 영상 밝기 조절
-    &::after {
+    > &::after {
       position: absolute;
       content: "";
       width: 100%;
@@ -77,22 +90,25 @@ main {
       background-color: rgba(0, 0, 0, 0.7);
       z-index: -1;
     }
-    h2 {
-      font-size: 72px;
+
+    > h2 {
+      font-size: 4.5rem;
       font-weight: 600;
-      line-height: 108px;
-      margin-bottom: 68px;
+      line-height: 6.75rem;
+      margin-bottom: 4.25rem;
     }
-    a {
-      button {
+
+    > a {
+      > button {
       }
     }
 
-    .mouseScroll {
+    > .mouseScroll {
       position: absolute;
       bottom: 30px;
       @include center();
       flex-direction: column;
+
       > img {
         margin: 6px;
         animation-name: move; // 애니메이션 명
@@ -102,12 +118,14 @@ main {
         animation-iteration-count: infinite; // 반복 설정
         animation-direction: alternate; // 재생 방향 설정
       }
+
       @keyframes move {
         100% {
           margin: 0px;
         }
       }
-      p {
+
+      > p {
         margin-top: 12px;
         color: rgba(#5cffc0, 0.3);
         font-size: 16px;
@@ -115,66 +133,59 @@ main {
     }
   }
 
-  section.PROMO {
-    h3 {
-      margin-bottom: 35px;
-    }
-
-    video {
+  > section.PROMO {
+    > video {
       margin-top: 35px;
       width: 50%;
     }
   }
 
-  section.UNIVERSE {
-    h3 {
+  > section.UNIVERSE {
+    > p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 36px;
+      margin-bottom: 30px;
     }
 
-    h4 {
-      margin-bottom: 70px;
-    }
-
-    .swiper {
+    > .swiper {
       width: 100%;
-      ul.swiper-wrapper {
-        height: 300px;
+
+      > ul.swiper-wrapper {
         display: flex;
-        margin-bottom: 130px;
-        li.swiper-slide {
-          padding: 15px;
-          margin: 0 10px;
+
+        > li.swiper-slide {
+          padding: 15px 15px 0 15px;
           border-radius: 16px;
           background-color: #000;
+
           > img {
             width: 100%;
             border-radius: 12px;
           }
-          p {
+
+          > p {
             text-align: left;
-            line-height: 35px;
-            span {
-            }
+            line-height: 50px;
           }
         }
       }
     }
 
-    button {
+    > button {
+      margin-top: 60px;
     }
   }
 
-  section.ROADMAP {
-    h3 {
-    }
-
-    article {
-      width: 1160px;
-      height: 500px;
+  > section.ROADMAP {
+    > article {
+      width: 70%;
+      height: 65vh;
       display: flex;
       border-radius: 16px;
       background-color: #111;
 
-      .title {
+      > .title {
         display: block;
         width: 140px;
         height: 100%;
@@ -182,14 +193,18 @@ main {
         border-radius: 16px 0 0 16px;
         background-color: #0e0f0f;
 
-        button {
+        > button {
           position: relative;
           width: 100%;
           border: 0;
           font-size: 32px;
           margin-bottom: 30px;
+        }
 
-          &:first-child:before {
+        > .onClick {
+          color: #31f8ab;
+
+          &:before {
             position: absolute;
             content: "";
             width: 4px;
@@ -201,49 +216,47 @@ main {
             border-radius: 10px;
           }
         }
-        .onClick {
-          color: #31f8ab;
-        }
       }
 
-      ul {
+      > ul {
         position: relative;
         width: calc(100% - 140px);
         height: 100%;
 
-        li {
+        > li {
           position: relative;
           width: 100%;
           height: 100%;
           padding: 42px;
 
-          p {
+          > p {
             text-align: left;
             font-size: 16px;
             line-height: 32px;
           }
 
-          p:hover {
+          > p:hover {
             color: var(--pointText);
           }
 
-          &:nth-child(1) {
+          > &:nth-child(1) {
             position: absolute;
 
-            img {
+            > img {
               position: absolute;
               top: 55px;
               right: 55px;
             }
           }
 
-          &:nth-child(2) {
+          > &:nth-child(2) {
             position: absolute;
           }
 
-          &:nth-child(3) {
+          > &:nth-child(3) {
             position: absolute;
-            p {
+
+            > p {
               font-size: 32px;
               color: #666;
             }
@@ -253,78 +266,83 @@ main {
     }
   }
 
-  section.TEAM {
-    height: 100vh;
-    @include center();
-    flex-direction: column;
-
-    h3 {
+  > section.TEAM {
+    > p {
+      font-size: 20px;
+      line-height: 36px;
+      font-weight: 400;
     }
 
-    h4 {
-      margin-bottom: 40px;
-    }
-
-    .swiper {
+    > .swiper {
       width: 100%;
-      ul {
-        display: flex;
-        margin-bottom: 80px;
 
-        li {
-          width: 260px;
-          height: 330px;
+      > ul {
+        height: 330px;
+
+        > li {
+          box-sizing: border-box;
+          height: 270px;
           background-color: #000;
-          border-radius: 16px;
+          border-radius: 13px;
+          margin: 10px;
           padding: 10px;
 
-          .img_area {
-            margin-bottom: 25px;
-            img {
+          > .img_area {
+            width: 100%;
+
+            > img {
               width: 100%;
             }
           }
-          .title_area {
-            p {
+
+          > .title_area {
+            width: 100%;
+
+            > .name {
+              padding: 10px;
               font-size: 26px;
               line-height: 26px;
+            }
 
-              span {
-                font-size: 16px;
-              }
+            > .job {
+              padding: 10px;
+              font-size: 16px;
+              line-height: 16px;
             }
           }
         }
       }
     }
 
-    // 문자열이 돌아가는 부분
-    article {
+    // 문자열이 회전
+    > ul {
+      margin-top: 40px;
       display: flex;
       // justify-content: space-evenly;
       width: 100%;
       height: 80px;
       background-color: #000;
 
-      .rotation_text {
+      > .rotation_text {
         @include center();
         margin: 0 30px;
         bottom: 0;
         position: relative;
-        animation-name: rotation_text; // 애니메이션 명
+        animation-name: rotation_text1; // 애니메이션 명
         animation-duration: 30s; // 완료까지 걸리는 시간 설정
         animation-timing-function: linear; // 속도 곡선 설정
         // animation-delay: 2s; // 지연 설정
         animation-iteration-count: infinite; // 반복 설정
+
         // animation-direction: alternate; // 재생 방향 설정
-        p {
+        > p {
           font-size: 36px;
           font-weight: 300;
           margin-right: 16px;
           white-space: nowrap;
         }
 
-        img {
+        > img {
         }
       }
 
@@ -340,26 +358,26 @@ main {
     }
   }
 
-  section.PARTNERS {
+  > section.PARTNERS {
     height: 100vh;
     @include center();
     flex-direction: column;
     width: 1400px;
     margin: 0 auto;
 
-    h3 {
+    > h3 {
     }
 
-    h4 {
+    > h4 {
       margin-bottom: 30px;
     }
 
-    ul {
+    > ul {
       @include center();
       display: flex;
       flex-wrap: wrap;
 
-      li {
+      > li {
         color: #666;
         @include center();
         width: 210px;
@@ -372,24 +390,26 @@ main {
     }
   }
 
-  section.COMMUNITY {
+  > section.COMMUNITY {
     height: 100vh;
     @include center();
     flex-direction: column;
 
-    h3 {
+    > h3 {
     }
 
-    h4 {
+    > h4 {
       margin-bottom: 60px;
     }
-    .swiper {
+
+    > .swiper {
       width: 100%;
-      ul {
+
+      > ul {
         display: flex;
         margin-bottom: 120px;
 
-        li {
+        > li {
           @include center();
           width: 500px;
           height: 330px;
@@ -398,7 +418,7 @@ main {
           border-radius: 10px;
           background-color: #000;
 
-          img {
+          > img {
             width: 100%;
           }
         }
@@ -517,6 +537,7 @@ footer {
             li {
               width: 40px;
               margin: 0 5px;
+
               a {
                 > img {
                   width: 100%;
@@ -526,6 +547,7 @@ footer {
           }
         }
       }
+
       > p {
         font-size: 14px;
         line-height: 29px;
@@ -534,6 +556,7 @@ footer {
   }
 }
 
+// 모달
 .ConnectWallet {
   position: fixed;
   top: 130px;
@@ -549,6 +572,7 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
   &:hover {
     border: 0;
     background: linear-gradient(to right, #31f8ab, #39c2ee); // 적용이 안됨
@@ -558,6 +582,7 @@ footer {
     background-position: center;
     background-size: cover;
   }
+
   &:hover::before {
     position: absolute;
     content: "Connect Wallet";
@@ -572,6 +597,7 @@ footer {
     font-weight: 600;
     font-size: 18px;
   }
+
   &:hover::after {
     position: absolute;
     content: "";
@@ -583,11 +609,14 @@ footer {
     border-left: 20px solid #fff;
     border-bottom: 10px solid transparent;
   }
+
   img {
     width: 100%;
+
     &:hover {
     }
   }
+
   > .modal {
     @include center();
     flex-direction: column;
@@ -602,14 +631,52 @@ footer {
     border: 1px solid #fff;
     background-color: #000;
     z-index: 10;
+
     img {
       width: 14%;
       margin-bottom: 25px;
     }
+
     p {
       font-size: 28px;
       font-weight: 600;
       color: #31f8ab;
     }
   }
+}
+
+// 미디어 쿼리 작업 중
+
+main {
+  section:nth-child(1) {
+    // display: none;
+  }
+
+  section:nth-child(2) {
+    // display: none;
+  }
+
+  section:nth-child(3) {
+    // display: none;
+  }
+
+  section:nth-child(4) {
+    // display: none;
+  }
+
+  section:nth-child(5) {
+    // display: none;
+  }
+
+  section:nth-child(6) {
+    display: none;
+  }
+
+  section:nth-child(7) {
+    display: none;
+  }
+}
+
+footer {
+  display: none;
 }

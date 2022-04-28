@@ -15,39 +15,47 @@ header {
           align-items: center;
 }
 
-header .inner {
-  position: relative;
-  width: 87.5rem;
-  margin: 0 auto;
+header > .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-header .inner nav {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+header > .inner > h1 {
+  margin-left: 3.125rem;
 }
 
-header .inner nav ul {
+header > .inner > nav > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .inner nav ul li {
-  margin-left: 7.8125rem;
+header > .inner > nav > ul > li {
+  margin: 1.25rem 3.125em;
 }
 
-header .inner nav ul li a:hover {
+header > .inner > nav > ul > li > a:hover {
   cursor: pointer;
   color: var(--pointText);
 }
 
-header .inner .onClick {
+header > .inner > .onClick {
   cursor: pointer;
   color: var(--pointText);
 }
 
-main section {
+main > section {
+  padding-top: 80px;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -67,7 +75,17 @@ main section {
   overflow: hidden;
 }
 
-main section.main_VIDEO video {
+main > section > h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 96px;
+}
+
+main > section.main_VIDEO {
+  padding-top: 0;
+}
+
+main > section.main_VIDEO > video {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -76,7 +94,7 @@ main section.main_VIDEO video {
   z-index: -2;
 }
 
-main section.main_VIDEO::after {
+> main > section.main_VIDEO::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -85,14 +103,14 @@ main section.main_VIDEO::after {
   z-index: -1;
 }
 
-main section.main_VIDEO h2 {
-  font-size: 72px;
+main > section.main_VIDEO > h2 {
+  font-size: 4.5rem;
   font-weight: 600;
-  line-height: 108px;
-  margin-bottom: 68px;
+  line-height: 6.75rem;
+  margin-bottom: 4.25rem;
 }
 
-main section.main_VIDEO .mouseScroll {
+main > section.main_VIDEO > .mouseScroll {
   position: absolute;
   bottom: 30px;
   display: -webkit-box;
@@ -110,7 +128,7 @@ main section.main_VIDEO .mouseScroll {
           flex-direction: column;
 }
 
-main section.main_VIDEO .mouseScroll > img {
+main > section.main_VIDEO > .mouseScroll > img {
   margin: 6px;
   -webkit-animation-name: move;
           animation-name: move;
@@ -136,57 +154,57 @@ main section.main_VIDEO .mouseScroll > img {
   }
 }
 
-main section.main_VIDEO .mouseScroll p {
+main > section.main_VIDEO > .mouseScroll > p {
   margin-top: 12px;
   color: rgba(92, 255, 192, 0.3);
   font-size: 16px;
 }
 
-main section.PROMO h3 {
-  margin-bottom: 35px;
-}
-
-main section.PROMO video {
+main > section.PROMO > video {
   margin-top: 35px;
   width: 50%;
 }
 
-main section.UNIVERSE h4 {
-  margin-bottom: 70px;
+main > section.UNIVERSE > p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 30px;
 }
 
-main section.UNIVERSE .swiper {
+main > section.UNIVERSE > .swiper {
   width: 100%;
 }
 
-main section.UNIVERSE .swiper ul.swiper-wrapper {
-  height: 300px;
+main > section.UNIVERSE > .swiper > ul.swiper-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 130px;
 }
 
-main section.UNIVERSE .swiper ul.swiper-wrapper li.swiper-slide {
-  padding: 15px;
-  margin: 0 10px;
+main > section.UNIVERSE > .swiper > ul.swiper-wrapper > li.swiper-slide {
+  padding: 15px 15px 0 15px;
   border-radius: 16px;
   background-color: #000;
 }
 
-main section.UNIVERSE .swiper ul.swiper-wrapper li.swiper-slide > img {
+main > section.UNIVERSE > .swiper > ul.swiper-wrapper > li.swiper-slide > img {
   width: 100%;
   border-radius: 12px;
 }
 
-main section.UNIVERSE .swiper ul.swiper-wrapper li.swiper-slide p {
+main > section.UNIVERSE > .swiper > ul.swiper-wrapper > li.swiper-slide > p {
   text-align: left;
-  line-height: 35px;
+  line-height: 50px;
 }
 
-main section.ROADMAP article {
-  width: 1160px;
-  height: 500px;
+main > section.UNIVERSE > button {
+  margin-top: 60px;
+}
+
+main > section.ROADMAP > article {
+  width: 70%;
+  height: 65vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,7 +212,7 @@ main section.ROADMAP article {
   background-color: #111;
 }
 
-main section.ROADMAP article .title {
+main > section.ROADMAP > article > .title {
   display: block;
   width: 140px;
   height: 100%;
@@ -203,7 +221,7 @@ main section.ROADMAP article .title {
   background-color: #0e0f0f;
 }
 
-main section.ROADMAP article .title button {
+main > section.ROADMAP > article > .title > button {
   position: relative;
   width: 100%;
   border: 0;
@@ -211,7 +229,11 @@ main section.ROADMAP article .title button {
   margin-bottom: 30px;
 }
 
-main section.ROADMAP article .title button:first-child:before {
+main > section.ROADMAP > article > .title > .onClick {
+  color: #31f8ab;
+}
+
+main > section.ROADMAP > article > .title > .onClick:before {
   position: absolute;
   content: "";
   width: 4px;
@@ -224,114 +246,102 @@ main section.ROADMAP article .title button:first-child:before {
   border-radius: 10px;
 }
 
-main section.ROADMAP article .title .onClick {
-  color: #31f8ab;
-}
-
-main section.ROADMAP article ul {
+main > section.ROADMAP > article > ul {
   position: relative;
   width: calc(100% - 140px);
   height: 100%;
 }
 
-main section.ROADMAP article ul li {
+main > section.ROADMAP > article > ul > li {
   position: relative;
   width: 100%;
   height: 100%;
   padding: 42px;
 }
 
-main section.ROADMAP article ul li p {
+main > section.ROADMAP > article > ul > li > p {
   text-align: left;
   font-size: 16px;
   line-height: 32px;
 }
 
-main section.ROADMAP article ul li p:hover {
+main > section.ROADMAP > article > ul > li > p:hover {
   color: var(--pointText);
 }
 
-main section.ROADMAP article ul li:nth-child(1) {
+> main > section.ROADMAP > article > ul > li:nth-child(1) {
   position: absolute;
 }
 
-main section.ROADMAP article ul li:nth-child(1) img {
+> main > section.ROADMAP > article > ul > li:nth-child(1) > img {
   position: absolute;
   top: 55px;
   right: 55px;
 }
 
-main section.ROADMAP article ul li:nth-child(2) {
+> main > section.ROADMAP > article > ul > li:nth-child(2) {
   position: absolute;
 }
 
-main section.ROADMAP article ul li:nth-child(3) {
+> main > section.ROADMAP > article > ul > li:nth-child(3) {
   position: absolute;
 }
 
-main section.ROADMAP article ul li:nth-child(3) p {
+> main > section.ROADMAP > article > ul > li:nth-child(3) > p {
   font-size: 32px;
   color: #666;
 }
 
-main section.TEAM {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+main > section.TEAM > p {
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 400;
 }
 
-main section.TEAM h4 {
-  margin-bottom: 40px;
-}
-
-main section.TEAM .swiper {
+main > section.TEAM > .swiper {
   width: 100%;
 }
 
-main section.TEAM .swiper ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 80px;
+main > section.TEAM > .swiper > ul {
+  height: 330px;
 }
 
-main section.TEAM .swiper ul li {
-  width: 260px;
-  height: 330px;
+main > section.TEAM > .swiper > ul > li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 270px;
   background-color: #000;
-  border-radius: 16px;
+  border-radius: 13px;
+  margin: 10px;
   padding: 10px;
 }
 
-main section.TEAM .swiper ul li .img_area {
-  margin-bottom: 25px;
-}
-
-main section.TEAM .swiper ul li .img_area img {
+main > section.TEAM > .swiper > ul > li > .img_area {
   width: 100%;
 }
 
-main section.TEAM .swiper ul li .title_area p {
+main > section.TEAM > .swiper > ul > li > .img_area > img {
+  width: 100%;
+}
+
+main > section.TEAM > .swiper > ul > li > .title_area {
+  width: 100%;
+}
+
+main > section.TEAM > .swiper > ul > li > .title_area > .name {
+  padding: 10px;
   font-size: 26px;
   line-height: 26px;
 }
 
-main section.TEAM .swiper ul li .title_area p span {
+main > section.TEAM > .swiper > ul > li > .title_area > .job {
+  padding: 10px;
   font-size: 16px;
+  line-height: 16px;
 }
 
-main section.TEAM article {
+main > section.TEAM > ul {
+  margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,7 +350,7 @@ main section.TEAM article {
   background-color: #000;
 }
 
-main section.TEAM article .rotation_text {
+main > section.TEAM > ul > .rotation_text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,8 +363,8 @@ main section.TEAM article .rotation_text {
   margin: 0 30px;
   bottom: 0;
   position: relative;
-  -webkit-animation-name: rotation_text;
-          animation-name: rotation_text;
+  -webkit-animation-name: rotation_text1;
+          animation-name: rotation_text1;
   -webkit-animation-duration: 30s;
           animation-duration: 30s;
   -webkit-animation-timing-function: linear;
@@ -363,7 +373,7 @@ main section.TEAM article .rotation_text {
           animation-iteration-count: infinite;
 }
 
-main section.TEAM article .rotation_text p {
+main > section.TEAM > ul > .rotation_text > p {
   font-size: 36px;
   font-weight: 300;
   margin-right: 16px;
@@ -388,7 +398,7 @@ main section.TEAM article .rotation_text p {
   }
 }
 
-main section.PARTNERS {
+main > section.PARTNERS {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -407,11 +417,11 @@ main section.PARTNERS {
   margin: 0 auto;
 }
 
-main section.PARTNERS h4 {
+main > section.PARTNERS > h4 {
   margin-bottom: 30px;
 }
 
-main section.PARTNERS ul {
+main > section.PARTNERS > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -426,7 +436,7 @@ main section.PARTNERS ul {
       flex-wrap: wrap;
 }
 
-main section.PARTNERS ul li {
+main > section.PARTNERS > ul > li {
   color: #666;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -445,7 +455,7 @@ main section.PARTNERS ul li {
   background-color: #161616;
 }
 
-main section.COMMUNITY {
+main > section.COMMUNITY {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,22 +472,22 @@ main section.COMMUNITY {
           flex-direction: column;
 }
 
-main section.COMMUNITY h4 {
+main > section.COMMUNITY > h4 {
   margin-bottom: 60px;
 }
 
-main section.COMMUNITY .swiper {
+main > section.COMMUNITY > .swiper {
   width: 100%;
 }
 
-main section.COMMUNITY .swiper ul {
+main > section.COMMUNITY > .swiper > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 120px;
 }
 
-main section.COMMUNITY .swiper ul li {
+main > section.COMMUNITY > .swiper > ul > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,7 +504,7 @@ main section.COMMUNITY .swiper ul li {
   background-color: #000;
 }
 
-main section.COMMUNITY .swiper ul li img {
+main > section.COMMUNITY > .swiper > ul > li > img {
   width: 100%;
 }
 
@@ -780,5 +790,17 @@ footer .bottom .wrapper > p {
   font-size: 28px;
   font-weight: 600;
   color: #31f8ab;
+}
+
+main section:nth-child(6) {
+  display: none;
+}
+
+main section:nth-child(7) {
+  display: none;
+}
+
+footer {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
