@@ -1,9 +1,3 @@
-// 색상 등록
-:root {
-  --pointText: #5cffc0;
-  --grayText: #686868;
-}
-
 // 중앙 정렬
 @mixin center {
   display: flex;
@@ -17,103 +11,527 @@
   color: var(--pointText);
 }
 
-.hiding {
-  display: none;
-}
-
-// COMMON
-* {
-  box-sizing: border-box;
-  text-align: center;
-  scroll-behavior: smooth;
-
-  body {
-    position: relative;
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    background-color: #010101df;
-    // background-color: rgb(176, 209, 229); // 임시 색상
-    color: #fff;
-    // background-image: url(../img/grid_text.png);
-    &::before {
-      position: absolute;
-      // background-image: url(../img/mapBg.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      z-index: 999;
-    }
-  }
-
-  img {
-    display: block;
-  }
-
-  h2 {
-    font-size: 72px;
-    line-height: 108px;
-    font-weight: 600;
-  }
-
-  h3 {
-    font-size: 48px;
-    line-height: 96px;
-    font-weight: 600;
-  }
-
-  h4 {
-    font-size: 20px;
-    line-height: 36px;
-  }
-
-  button {
-    cursor: pointer;
-  }
-
-  button.point {
-    width: 280px;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 30px;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    font-family: "Lato", sans-serif;
-
-    &:hover {
-      background: linear-gradient(to right, #31f8ab, #39c2ee);
-      border: 0;
-      color: #101010;
-    }
-  }
-
-  button.point2 {
-    width: 280px;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 30px;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    font-family: "Lato", sans-serif;
-  }
-
-  .pointColor {
-    color: var(--pointText);
-  }
-}
-
-section {
-  position: relative;
+// header 영역
+header {
+  position: fixed;
   width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  @include center();
+  .inner {
+    position: relative;
+    width: 87.5rem;
+    margin: 0 auto;
+    h1 {
+    }
+    nav {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      ul {
+        display: flex;
+        li {
+          margin-left: 7.8125rem;
+          a {
+            &:hover {
+              @include text_hover();
+            }
+          }
+        }
+      }
+    }
+    // nav 클릭 후, 추가되는 클래스의 색상
+    .onClick {
+      @include text_hover();
+    }
+  }
+}
+
+// main 영역
+main {
+  // 공통 옵션
+  section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    @include center();
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  section.main_VIDEO {
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+    // 영상 밝기 조절
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+    h2 {
+      font-size: 72px;
+      font-weight: 600;
+      line-height: 108px;
+      margin-bottom: 68px;
+    }
+    a {
+      button {
+      }
+    }
+
+    .mouseScroll {
+      position: absolute;
+      bottom: 30px;
+      @include center();
+      flex-direction: column;
+      > img {
+        margin: 6px;
+        animation-name: move; // 애니메이션 명
+        animation-duration: 0.5s; // 완료까지 걸리는 시간 설정
+        animation-timing-function: linear; // 속도 곡선 설정
+        // animation-delay: 2s; // 지연 설정
+        animation-iteration-count: infinite; // 반복 설정
+        animation-direction: alternate; // 재생 방향 설정
+      }
+      @keyframes move {
+        100% {
+          margin: 0px;
+        }
+      }
+      p {
+        margin-top: 12px;
+        color: rgba(#5cffc0, 0.3);
+        font-size: 16px;
+      }
+    }
+  }
+
+  section.PROMO {
+    h3 {
+      margin-bottom: 35px;
+    }
+
+    video {
+      margin-top: 35px;
+      width: 50%;
+    }
+  }
+
+  section.UNIVERSE {
+    h3 {
+    }
+
+    h4 {
+      margin-bottom: 70px;
+    }
+
+    .swiper {
+      width: 100%;
+      ul.swiper-wrapper {
+        height: 300px;
+        display: flex;
+        margin-bottom: 130px;
+        li.swiper-slide {
+          padding: 15px;
+          margin: 0 10px;
+          border-radius: 16px;
+          background-color: #000;
+          > img {
+            width: 100%;
+            border-radius: 12px;
+          }
+          p {
+            text-align: left;
+            line-height: 35px;
+            span {
+            }
+          }
+        }
+      }
+    }
+
+    button {
+    }
+  }
+
+  section.ROADMAP {
+    h3 {
+    }
+
+    article {
+      width: 1160px;
+      height: 500px;
+      display: flex;
+      border-radius: 16px;
+      background-color: #111;
+
+      .title {
+        display: block;
+        width: 140px;
+        height: 100%;
+        padding: 24px 0;
+        border-radius: 16px 0 0 16px;
+        background-color: #0e0f0f;
+
+        button {
+          position: relative;
+          width: 100%;
+          border: 0;
+          font-size: 32px;
+          margin-bottom: 30px;
+
+          &:first-child:before {
+            position: absolute;
+            content: "";
+            width: 4px;
+            height: 50%;
+            background-color: #31f8ab;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+          }
+        }
+        .onClick {
+          color: #31f8ab;
+        }
+      }
+
+      ul {
+        position: relative;
+        width: calc(100% - 140px);
+        height: 100%;
+
+        li {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          padding: 42px;
+
+          p {
+            text-align: left;
+            font-size: 16px;
+            line-height: 32px;
+          }
+
+          p:hover {
+            color: var(--pointText);
+          }
+
+          &:nth-child(1) {
+            position: absolute;
+
+            img {
+              position: absolute;
+              top: 55px;
+              right: 55px;
+            }
+          }
+
+          &:nth-child(2) {
+            position: absolute;
+          }
+
+          &:nth-child(3) {
+            position: absolute;
+            p {
+              font-size: 32px;
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.TEAM {
+    height: 100vh;
+    @include center();
+    flex-direction: column;
+
+    h3 {
+    }
+
+    h4 {
+      margin-bottom: 40px;
+    }
+
+    .swiper {
+      width: 100%;
+      ul {
+        display: flex;
+        margin-bottom: 80px;
+
+        li {
+          width: 260px;
+          height: 330px;
+          background-color: #000;
+          border-radius: 16px;
+          padding: 10px;
+
+          .img_area {
+            margin-bottom: 25px;
+            img {
+              width: 100%;
+            }
+          }
+          .title_area {
+            p {
+              font-size: 26px;
+              line-height: 26px;
+
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 문자열이 돌아가는 부분
+    article {
+      display: flex;
+      // justify-content: space-evenly;
+      width: 100%;
+      height: 80px;
+      background-color: #000;
+
+      .rotation_text {
+        @include center();
+        margin: 0 30px;
+        bottom: 0;
+        position: relative;
+        animation-name: rotation_text; // 애니메이션 명
+        animation-duration: 30s; // 완료까지 걸리는 시간 설정
+        animation-timing-function: linear; // 속도 곡선 설정
+        // animation-delay: 2s; // 지연 설정
+        animation-iteration-count: infinite; // 반복 설정
+        // animation-direction: alternate; // 재생 방향 설정
+        p {
+          font-size: 36px;
+          font-weight: 300;
+          margin-right: 16px;
+          white-space: nowrap;
+        }
+
+        img {
+        }
+      }
+
+      @keyframes rotation_text {
+        0% {
+          left: 0;
+        }
+
+        to {
+          left: -2000px;
+        }
+      }
+    }
+  }
+
+  section.PARTNERS {
+    height: 100vh;
+    @include center();
+    flex-direction: column;
+    width: 1400px;
+    margin: 0 auto;
+
+    h3 {
+    }
+
+    h4 {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      @include center();
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        color: #666;
+        @include center();
+        width: 210px;
+        height: 115px;
+        margin: 7.5px;
+        font-size: 32px;
+        border-radius: 16px;
+        background-color: #161616;
+      }
+    }
+  }
+
+  section.COMMUNITY {
+    height: 100vh;
+    @include center();
+    flex-direction: column;
+
+    h3 {
+    }
+
+    h4 {
+      margin-bottom: 60px;
+    }
+    .swiper {
+      width: 100%;
+      ul {
+        display: flex;
+        margin-bottom: 120px;
+
+        li {
+          @include center();
+          width: 500px;
+          height: 330px;
+          padding: 10px;
+          // margin: 0 25px;
+          border-radius: 10px;
+          background-color: #000;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer 영역
+
+footer {
+  @include center();
   flex-direction: column;
-  overflow: hidden;
-  // border: 1px solid #fff; // 임시 영역 구분
+
+  .top {
+    @include center();
+    height: 50vh;
+
+    p {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 72px;
+    }
+  }
+
+  .bottom {
+    @include center();
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+
+    > img {
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+    }
+
+    .wrapper {
+      .layout {
+        width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+
+        .left {
+          p {
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 30px;
+          }
+
+          form {
+            @include center();
+            justify-content: space-between;
+            padding: 10px;
+            width: 320px;
+            height: 50px;
+            border-radius: 15px;
+            background-color: #000;
+
+            input {
+              text-align: left;
+              font-size: 16px;
+              outline: none;
+              background-color: transparent;
+              border: 0;
+              color: #fff;
+            }
+
+            button {
+              font-size: 16px;
+              background-color: transparent;
+              border: 0;
+            }
+          }
+        }
+
+        .right {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          flex-direction: column;
+
+          email {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: underline;
+          }
+
+          p {
+            display: flex;
+
+            span {
+              margin-left: 30px;
+              position: relative;
+
+              &::before {
+                content: "";
+                width: 2px;
+                height: 15px;
+                background-color: #fff;
+                position: absolute;
+                left: -15px;
+              }
+            }
+          }
+
+          ul {
+            margin-top: 30px;
+            display: flex;
+
+            li {
+              width: 40px;
+              margin: 0 5px;
+              a {
+                > img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+      > p {
+        font-size: 14px;
+        line-height: 29px;
+      }
+    }
+  }
 }
 
 .ConnectWallet {
@@ -192,529 +610,6 @@ section {
       font-size: 28px;
       font-weight: 600;
       color: #31f8ab;
-    }
-  }
-}
-
-// header 영역
-.wrapper {
-  header {
-    position: fixed;
-    width: 100%;
-    height: 80px;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    @include center();
-
-    .inner {
-      position: relative;
-      width: 1400px;
-      margin: 0 auto;
-
-      h1 {
-      }
-
-      nav {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-
-        ul {
-          display: flex;
-
-          li {
-            margin-left: 125px;
-
-            a {
-              &:hover {
-                @include text_hover();
-              }
-            }
-          }
-        }
-      }
-      // nav 클릭 시 클래스 색상
-      .onClick {
-        @include text_hover();
-      }
-    }
-  }
-}
-
-// main 영역
-.wrapper {
-  main {
-    section.main_VIDEO {
-      video {
-        position: absolute;
-        width: 100%;
-        z-index: -2;
-      }
-      &::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: -1;
-      }
-
-      h2 {
-        margin-bottom: 68px;
-
-        span {
-        }
-      }
-
-      a {
-        button {
-        }
-      }
-
-      .mouseScroll {
-        position: absolute;
-        bottom: 30px;
-        @include center();
-        flex-direction: column;
-        > img {
-          margin: 6px;
-          animation-name: move; // 애니메이션 명
-          animation-duration: 0.5s; // 완료까지 걸리는 시간 설정
-          animation-timing-function: linear; // 속도 곡선 설정
-          // animation-delay: 2s; // 지연 설정
-          animation-iteration-count: infinite; // 반복 설정
-          animation-direction: alternate; // 재생 방향 설정
-        }
-        @keyframes move {
-          100% {
-            margin: 0px;
-          }
-        }
-        p {
-          margin-top: 12px;
-          color: rgba(#5cffc0, 0.3);
-          font-size: 16px;
-        }
-      }
-    }
-
-    section.PROMO {
-      h3 {
-        margin-bottom: 35px;
-      }
-
-      video {
-        margin-top: 35px;
-        width: 50%;
-      }
-    }
-
-    section.UNIVERSE {
-      h3 {
-      }
-
-      h4 {
-        margin-bottom: 70px;
-      }
-
-      .swiper {
-        width: 100%;
-        ul.swiper-wrapper {
-          height: 300px;
-          display: flex;
-          margin-bottom: 130px;
-          li.swiper-slide {
-            padding: 15px;
-            margin: 0 10px;
-            border-radius: 16px;
-            background-color: #000;
-            > img {
-              width: 100%;
-              border-radius: 12px;
-            }
-            p {
-              text-align: left;
-              line-height: 35px;
-              span {
-              }
-            }
-          }
-        }
-      }
-
-      button {
-      }
-    }
-
-    section.ROADMAP {
-      h3 {
-      }
-
-      article {
-        width: 1160px;
-        height: 500px;
-        display: flex;
-        border-radius: 16px;
-        background-color: #111;
-
-        .title {
-          display: block;
-          width: 140px;
-          height: 100%;
-          padding: 24px 0;
-          border-radius: 16px 0 0 16px;
-          background-color: #0e0f0f;
-
-          button {
-            position: relative;
-            width: 100%;
-            border: 0;
-            font-size: 32px;
-            margin-bottom: 30px;
-
-            &:first-child:before {
-              position: absolute;
-              content: "";
-              width: 4px;
-              height: 50%;
-              background-color: #31f8ab;
-              top: 50%;
-              left: 0;
-              transform: translate(-50%, -50%);
-              border-radius: 10px;
-            }
-          }
-          .onClick {
-            color: #31f8ab;
-          }
-        }
-
-        ul {
-          position: relative;
-          width: calc(100% - 140px);
-          height: 100%;
-
-          li {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            padding: 42px;
-
-            p {
-              text-align: left;
-              font-size: 16px;
-              line-height: 32px;
-            }
-
-            p:hover {
-              color: var(--pointText);
-            }
-
-            &:nth-child(1) {
-              position: absolute;
-
-              img {
-                position: absolute;
-                top: 55px;
-                right: 55px;
-              }
-            }
-
-            &:nth-child(2) {
-              position: absolute;
-            }
-
-            &:nth-child(3) {
-              position: absolute;
-              p {
-                font-size: 32px;
-                color: #666;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    section.TEAM {
-      height: 100vh;
-      @include center();
-      flex-direction: column;
-
-      h3 {
-      }
-
-      h4 {
-        margin-bottom: 40px;
-      }
-
-      .swiper {
-        width: 100%;
-        ul {
-          display: flex;
-          margin-bottom: 80px;
-
-          li {
-            width: 260px;
-            height: 330px;
-            background-color: #000;
-            border-radius: 16px;
-            padding: 10px;
-
-            .img_area {
-              margin-bottom: 25px;
-              img {
-                width: 100%;
-              }
-            }
-            .title_area {
-              p {
-                font-size: 26px;
-                line-height: 26px;
-
-                span {
-                  font-size: 16px;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // 문자열이 돌아가는 부분
-      article {
-        display: flex;
-        // justify-content: space-evenly;
-        width: 100%;
-        height: 80px;
-        background-color: #000;
-
-        .rotation_text {
-          @include center();
-          margin: 0 30px;
-          bottom: 0;
-          position: relative;
-          animation-name: rotation_text; // 애니메이션 명
-          animation-duration: 30s; // 완료까지 걸리는 시간 설정
-          animation-timing-function: linear; // 속도 곡선 설정
-          // animation-delay: 2s; // 지연 설정
-          animation-iteration-count: infinite; // 반복 설정
-          // animation-direction: alternate; // 재생 방향 설정
-          p {
-            font-size: 36px;
-            font-weight: 300;
-            margin-right: 16px;
-            white-space: nowrap;
-          }
-
-          img {
-          }
-        }
-
-        @keyframes rotation_text {
-          0% {
-            left: 0;
-          }
-
-          to {
-            left: -2000px;
-          }
-        }
-      }
-    }
-
-    section.PARTNERS {
-      height: 100vh;
-      @include center();
-      flex-direction: column;
-      width: 1400px;
-      margin: 0 auto;
-
-      h3 {
-      }
-
-      h4 {
-        margin-bottom: 30px;
-      }
-
-      ul {
-        @include center();
-        display: flex;
-        flex-wrap: wrap;
-
-        li {
-          color: #666;
-          @include center();
-          width: 210px;
-          height: 115px;
-          margin: 7.5px;
-          font-size: 32px;
-          border-radius: 16px;
-          background-color: #161616;
-        }
-      }
-    }
-
-    section.COMMUNITY {
-      height: 100vh;
-      @include center();
-      flex-direction: column;
-
-      h3 {
-      }
-
-      h4 {
-        margin-bottom: 60px;
-      }
-      .swiper {
-        width: 100%;
-        ul {
-          display: flex;
-          margin-bottom: 120px;
-
-          li {
-            @include center();
-            width: 500px;
-            height: 330px;
-            padding: 10px;
-            // margin: 0 25px;
-            border-radius: 10px;
-            background-color: #000;
-
-            img {
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// footer 영역
-.wrapper {
-  footer {
-    @include center();
-    flex-direction: column;
-
-    .top {
-      @include center();
-      height: 50vh;
-
-      p {
-        font-size: 48px;
-        font-weight: 600;
-        line-height: 72px;
-      }
-    }
-
-    .bottom {
-      @include center();
-      flex-direction: column;
-      width: 100%;
-      height: 50vh;
-      position: relative;
-
-      > img {
-        position: absolute;
-        bottom: 0;
-        z-index: -1;
-        width: 100%;
-      }
-
-      .wrapper {
-        .layout {
-          width: 1400px;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 80px;
-
-          .left {
-            p {
-              text-align: left;
-              font-size: 20px;
-              font-weight: 500;
-              margin-bottom: 30px;
-            }
-
-            form {
-              @include center();
-              justify-content: space-between;
-              padding: 10px;
-              width: 320px;
-              height: 50px;
-              border-radius: 15px;
-              background-color: #000;
-
-              input {
-                text-align: left;
-                font-size: 16px;
-                outline: none;
-                background-color: transparent;
-                border: 0;
-                color: #fff;
-              }
-
-              button {
-                font-size: 16px;
-                background-color: transparent;
-                border: 0;
-              }
-            }
-          }
-
-          .right {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            flex-direction: column;
-
-            email {
-              font-size: 20px;
-              font-weight: 600;
-              text-decoration: underline;
-            }
-
-            p {
-              display: flex;
-
-              span {
-                margin-left: 30px;
-                position: relative;
-
-                &::before {
-                  content: "";
-                  width: 2px;
-                  height: 15px;
-                  background-color: #fff;
-                  position: absolute;
-                  left: -15px;
-                }
-              }
-            }
-
-            ul {
-              margin-top: 30px;
-              display: flex;
-
-              li {
-                width: 40px;
-                margin: 0 5px;
-                a {
-                  > img {
-                    width: 100%;
-                  }
-                }
-              }
-            }
-          }
-        }
-        > p {
-          font-size: 14px;
-          line-height: 29px;
-        }
-      }
     }
   }
 }
