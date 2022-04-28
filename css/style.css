@@ -49,7 +49,7 @@ header > .inner > nav > ul > li > a:hover {
   color: var(--pointText);
 }
 
-header > .inner > .onClick {
+header > .inner .onClick {
   cursor: pointer;
   color: var(--pointText);
 }
@@ -72,7 +72,6 @@ main > section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: hidden;
 }
 
 main > section > h2 {
@@ -94,7 +93,7 @@ main > section.main_VIDEO > video {
   z-index: -2;
 }
 
-> main > section.main_VIDEO::after {
+main > section.main_VIDEO::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -269,25 +268,25 @@ main > section.ROADMAP > article > ul > li > p:hover {
   color: var(--pointText);
 }
 
-> main > section.ROADMAP > article > ul > li:nth-child(1) {
+main > section.ROADMAP > article > ul > li:nth-child(1) {
   position: absolute;
 }
 
-> main > section.ROADMAP > article > ul > li:nth-child(1) > img {
+main > section.ROADMAP > article > ul > li:nth-child(1) img {
   position: absolute;
   top: 55px;
   right: 55px;
 }
 
-> main > section.ROADMAP > article > ul > li:nth-child(2) {
+main > section.ROADMAP > article > ul > li:nth-child(2) {
   position: absolute;
 }
 
-> main > section.ROADMAP > article > ul > li:nth-child(3) {
+main > section.ROADMAP > article > ul > li:nth-child(3) {
   position: absolute;
 }
 
-> main > section.ROADMAP > article > ul > li:nth-child(3) > p {
+main > section.ROADMAP > article > ul > li:nth-child(3) > p {
   font-size: 32px;
   color: #666;
 }
@@ -299,32 +298,19 @@ main > section.TEAM > p {
 }
 
 main > section.TEAM > .swiper {
+  margin-top: 40px;
   width: 100%;
-}
-
-main > section.TEAM > .swiper > ul {
-  height: 330px;
 }
 
 main > section.TEAM > .swiper > ul > li {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 270px;
   background-color: #000;
   border-radius: 13px;
-  margin: 10px;
   padding: 10px;
 }
 
-main > section.TEAM > .swiper > ul > li > .img_area {
-  width: 100%;
-}
-
 main > section.TEAM > .swiper > ul > li > .img_area > img {
-  width: 100%;
-}
-
-main > section.TEAM > .swiper > ul > li > .title_area {
   width: 100%;
 }
 
@@ -348,6 +334,7 @@ main > section.TEAM > ul {
   width: 100%;
   height: 80px;
   background-color: #000;
+  overflow: hidden;
 }
 
 main > section.TEAM > ul > .rotation_text {
@@ -360,13 +347,12 @@ main > section.TEAM > ul > .rotation_text {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 30px;
-  bottom: 0;
+  width: calc(100%-30px);
   position: relative;
-  -webkit-animation-name: rotation_text1;
-          animation-name: rotation_text1;
-  -webkit-animation-duration: 30s;
-          animation-duration: 30s;
+  -webkit-animation-name: rotation_text;
+          animation-name: rotation_text;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -398,30 +384,14 @@ main > section.TEAM > ul > .rotation_text > p {
   }
 }
 
-main > section.PARTNERS {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 1400px;
-  margin: 0 auto;
-}
-
-main > section.PARTNERS > h4 {
+main > section.PARTNERS > p {
+  font-size: 20px;
+  line-height: 40px;
   margin-bottom: 30px;
 }
 
 main > section.PARTNERS > ul {
+  width: 1470px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -455,25 +425,10 @@ main > section.PARTNERS > ul > li {
   background-color: #161616;
 }
 
-main > section.COMMUNITY {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-main > section.COMMUNITY > h4 {
-  margin-bottom: 60px;
+main > section.COMMUNITY > p {
+  font-size: 20px;
+  line-height: 40px;
+  margin-bottom: 30px;
 }
 
 main > section.COMMUNITY > .swiper {
@@ -484,7 +439,6 @@ main > section.COMMUNITY > .swiper > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 120px;
 }
 
 main > section.COMMUNITY > .swiper > ul > li {
@@ -497,8 +451,6 @@ main > section.COMMUNITY > .swiper > ul > li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 500px;
-  height: 330px;
   padding: 10px;
   border-radius: 10px;
   background-color: #000;
@@ -506,6 +458,10 @@ main > section.COMMUNITY > .swiper > ul > li {
 
 main > section.COMMUNITY > .swiper > ul > li > img {
   width: 100%;
+}
+
+main > section.COMMUNITY > button {
+  margin-top: 50px;
 }
 
 footer {
@@ -790,17 +746,5 @@ footer .bottom .wrapper > p {
   font-size: 28px;
   font-weight: 600;
   color: #31f8ab;
-}
-
-main section:nth-child(6) {
-  display: none;
-}
-
-main section:nth-child(7) {
-  display: none;
-}
-
-footer {
-  display: none;
 }
 /*# sourceMappingURL=style.css.map */
