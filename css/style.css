@@ -224,7 +224,7 @@ main > section.ROADMAP > article > .title > button {
   position: relative;
   width: 100%;
   border: 0;
-  font-size: 32px;
+  font-size: 2em;
   margin-bottom: 30px;
 }
 
@@ -260,8 +260,8 @@ main > section.ROADMAP > article > ul > li {
 
 main > section.ROADMAP > article > ul > li > p {
   text-align: left;
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1em;
+  line-height: 2em;
 }
 
 main > section.ROADMAP > article > ul > li > p:hover {
@@ -385,9 +385,9 @@ main > section.TEAM > ul > .rotation_text > p {
 }
 
 main > section.PARTNERS > p {
-  font-size: 20px;
-  line-height: 40px;
-  margin-bottom: 30px;
+  font-size: 1.25em;
+  line-height: 2.5em;
+  margin-bottom: 1.875em;
 }
 
 main > section.PARTNERS > ul {
@@ -404,6 +404,7 @@ main > section.PARTNERS > ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  overflow: hidden;
 }
 
 main > section.PARTNERS > ul > li {
@@ -494,9 +495,9 @@ footer .top {
 }
 
 footer .top p {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 600;
-  line-height: 72px;
+  line-height: 4.5rem;
 }
 
 footer .bottom {
@@ -523,10 +524,15 @@ footer .bottom > img {
   bottom: 0;
   z-index: -1;
   width: 100%;
+  height: 100%;
+}
+
+footer .bottom .wrapper {
+  width: 100%;
 }
 
 footer .bottom .wrapper .layout {
-  width: 1400px;
+  width: 80%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -539,9 +545,9 @@ footer .bottom .wrapper .layout {
 
 footer .bottom .wrapper .layout .left p {
   text-align: left;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 footer .bottom .wrapper .layout .left form {

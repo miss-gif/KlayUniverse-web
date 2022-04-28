@@ -1,3 +1,31 @@
+main {
+  section:nth-child(1) {
+    // display: none;
+  }
+  section:nth-child(2) {
+    display: none;
+  }
+  section:nth-child(3) {
+    display: none;
+  }
+  section:nth-child(4) {
+    display: none;
+  }
+  section:nth-child(5) {
+    display: none;
+  }
+  section:nth-child(6) {
+    display: none;
+  }
+  section:nth-child(7) {
+    display: none;
+  }
+}
+
+footer {
+  // display: none;
+}
+
 /* 화면 너비 0~ 1024px */
 @media (max-width: 1024px) {
   body {
@@ -33,6 +61,31 @@
         width: 85%;
       }
     }
+    section.ROADMAP {
+      article {
+        width: 90%;
+        .title {
+          button {
+          }
+        }
+        ul {
+          li {
+            p {
+            }
+            img {
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+    section.PARTNERS {
+      ul {
+        width: 900px;
+        li {
+        }
+      }
+    }
   }
 }
 
@@ -66,6 +119,47 @@
     section.PROMO {
       video {
         width: 90%;
+      }
+    }
+    section.ROADMAP {
+      article {
+        width: 90%;
+        .title {
+          button {
+          }
+        }
+        ul {
+          li {
+            p {
+            }
+            &:nth-child(1) {
+              position: absolute;
+              > img {
+                width: 30%;
+                top: 250px;
+              }
+            }
+          }
+        }
+      }
+    }
+    section.PARTNERS {
+      ul {
+        width: 700px;
+        li {
+        }
+      }
+    }
+    footer {
+      .layout {
+        flex-direction: column;
+        .right {
+          background-color: #147;
+          display: flex;
+          justify-content: left;
+          align-items: flex-start;
+          flex-direction: row;
+        }
       }
     }
   }

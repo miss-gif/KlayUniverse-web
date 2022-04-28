@@ -1,4 +1,28 @@
 @charset "UTF-8";
+main section:nth-child(2) {
+  display: none;
+}
+
+main section:nth-child(3) {
+  display: none;
+}
+
+main section:nth-child(4) {
+  display: none;
+}
+
+main section:nth-child(5) {
+  display: none;
+}
+
+main section:nth-child(6) {
+  display: none;
+}
+
+main section:nth-child(7) {
+  display: none;
+}
+
 /* 화면 너비 0~ 1024px */
 @media (max-width: 1024px) {
   body {
@@ -20,6 +44,15 @@
   }
   body section.PROMO video {
     width: 85%;
+  }
+  body section.ROADMAP article {
+    width: 90%;
+  }
+  body section.ROADMAP article ul li img {
+    width: 30%;
+  }
+  body section.PARTNERS ul {
+    width: 900px;
   }
 }
 
@@ -43,6 +76,41 @@
   }
   body section.PROMO video {
     width: 90%;
+  }
+  body section.ROADMAP article {
+    width: 90%;
+  }
+  body section.ROADMAP article ul li:nth-child(1) {
+    position: absolute;
+  }
+  body section.ROADMAP article ul li:nth-child(1) > img {
+    width: 30%;
+    top: 250px;
+  }
+  body section.PARTNERS ul {
+    width: 700px;
+  }
+  body footer .layout {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body footer .layout .right {
+    background-color: #147;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 /*# sourceMappingURL=media.css.map */
