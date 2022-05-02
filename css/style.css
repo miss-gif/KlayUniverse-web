@@ -1,8 +1,26 @@
+@media (max-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1020px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 header {
   position: fixed;
   width: 100%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,10 +43,11 @@ header > .inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1.25rem;
 }
 
 header > .inner > h1 {
-  margin-left: 50px;
+  margin-right: 6.25rem;
 }
 
 header > .inner > nav > ul {
@@ -38,7 +57,11 @@ header > .inner > nav > ul {
 }
 
 header > .inner > nav > ul > li {
-  margin: 20px 3.125em;
+  margin-right: 6.25rem;
+}
+
+header > .inner > nav > ul > li:last-child {
+  margin-right: 0;
 }
 
 header > .inner > nav > ul > li > a:hover {
@@ -49,6 +72,80 @@ header > .inner > nav > ul > li > a:hover {
 header > .inner .onClick {
   cursor: pointer;
   color: var(--pointText);
+}
+
+@media (max-width: 1020px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #156;
+  }
+  header > .inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 80%;
+  }
+  header > .inner > h1 {
+    margin-right: 2.25rem;
+  }
+  header > .inner > nav > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header > .inner > nav > ul > li {
+    margin-right: 2.25rem;
+  }
+  header > .inner > nav > ul > li:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    background-color: #147;
+  }
+  header > .inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+    background-color: #fff;
+  }
+  header > .inner > h1 {
+    margin-right: 2.25rem;
+  }
+  header > .inner > nav > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header > .inner > nav > ul > li {
+    margin-right: 2.25rem;
+  }
+  header > .inner > nav > ul > li:last-child {
+    margin-right: 0;
+  }
 }
 
 main > section {

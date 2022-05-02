@@ -1,3 +1,24 @@
+// 디바이스 사이즈
+$desktop: 1400px;
+$laptop: 1020px;
+$tablet: 768px;
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
 // 중앙 정렬
 @mixin center {
   display: flex;
@@ -11,29 +32,41 @@
   color: var(--pointText);
 }
 
+html {
+  @include desktop {
+    font-size: 16px;
+  }
+  @include laptop {
+    font-size: 14px;
+  }
+  @include tablet {
+    font-size: 12px;
+  }
+}
+
 // header 영역
 header {
   position: fixed;
   width: 100%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
   @include center();
-
   > .inner {
     @include center();
+    padding: 1.25rem;
 
     > h1 {
-      margin-left: 50px;
+      margin-right: 6.25rem;
     }
-
     > nav {
       > ul {
         display: flex;
-
         > li {
-          margin: 20px 3.125em;
-
+          margin-right: 6.25rem;
+          &:last-child {
+            margin-right: 0;
+          }
           > a {
             &:hover {
               @include text_hover();
@@ -42,10 +75,54 @@ header {
         }
       }
     }
-
     // nav 클릭 후, 추가되는 클래스의 색상
     .onClick {
       @include text_hover();
+    }
+  }
+
+  @include laptop {
+    @include center();
+    background-color: #156;
+    > .inner {
+      @include center();
+      width: 80%;
+      > h1 {
+        margin-right: 2.25rem;
+      }
+      > nav {
+        > ul {
+          display: flex;
+          > li {
+            margin-right: 2.25rem;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include tablet {
+    background-color: #147;
+    > .inner {
+      @include center();
+      width: 50%;
+      background-color: #fff;
+      > h1 {
+        margin-right: 2.25rem;
+      }
+      > nav {
+        > ul {
+          display: flex;
+          > li {
+            margin-right: 2.25rem;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
