@@ -1,170 +1,138 @@
-// main {
-//   section:nth-child(1) {
-//     // display: none;
-//   }
-//   section:nth-child(2) {
-//     display: none;
-//   }
-//   section:nth-child(3) {
-//     display: none;
-//   }
-//   section:nth-child(4) {
-//     display: none;
-//   }
-//   section:nth-child(5) {
-//     display: none;
-//   }
-//   section:nth-child(6) {
-//     display: none;
-//   }
-//   section:nth-child(7) {
-//     display: none;
+// /* 화면 너비 0~ 1024px */
+// @media (max-width: 1024px) {
+//   body {
+//     font-size: 14px;
+//     header {
+//       background-color: #156;
+//       .inner {
+//         h1 {
+//         }
+//         nav {
+//           ul {
+//             li {
+//               margin: 16px;
+//               a {
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//     section.main_VIDEO {
+//       h2 {
+//         font-size: 60px;
+//         line-height: 74px;
+//       }
+//     }
+//     section.PROMO {
+//       h2 {
+//         font-size: 32px;
+//         line-height: 46px;
+//       }
+//       video {
+//         width: 85%;
+//       }
+//     }
+//     section.ROADMAP {
+//       article {
+//         width: 90%;
+//         .title {
+//           button {
+//           }
+//         }
+//         ul {
+//           li {
+//             p {
+//             }
+//             img {
+//               width: 30%;
+//             }
+//           }
+//         }
+//       }
+//     }
+//     section.PARTNERS {
+//       ul {
+//         width: 900px;
+//         li {
+//         }
+//       }
+//     }
 //   }
 // }
 
-footer {
-  // display: none;
-}
-
-@media (min-width: 1920px) {
-  font-size: 16px;
-}
-
-/* 화면 너비 0~ 1024px */
-@media (max-width: 1024px) {
-  body {
-    font-size: 14px;
-    header {
-      background-color: #156;
-      .inner {
-        h1 {
-        }
-        nav {
-          ul {
-            li {
-              margin: 16px;
-              a {
-              }
-            }
-          }
-        }
-      }
-    }
-    section.main_VIDEO {
-      h2 {
-        font-size: 60px;
-        line-height: 74px;
-      }
-    }
-    section.PROMO {
-      h2 {
-        font-size: 32px;
-        line-height: 46px;
-      }
-      video {
-        width: 85%;
-      }
-    }
-    section.ROADMAP {
-      article {
-        width: 90%;
-        .title {
-          button {
-          }
-        }
-        ul {
-          li {
-            p {
-            }
-            img {
-              width: 30%;
-            }
-          }
-        }
-      }
-    }
-    section.PARTNERS {
-      ul {
-        width: 900px;
-        li {
-        }
-      }
-    }
-  }
-}
-
-/* 화면 너비 0~ 768px */
-@media (max-width: 768px) {
-  body {
-    font-size: 12px;
-    header {
-      background-color: #147;
-      .inner {
-        h1 {
-        }
-        nav {
-          display: none;
-          ul {
-            li {
-              margin: 1rem;
-              a {
-              }
-            }
-          }
-        }
-      }
-    }
-    section.main_VIDEO {
-      h2 {
-        font-size: 36px;
-        line-height: 50px;
-      }
-    }
-    section.PROMO {
-      video {
-        width: 90%;
-      }
-    }
-    section.ROADMAP {
-      article {
-        width: 90%;
-        .title {
-          button {
-          }
-        }
-        ul {
-          li {
-            p {
-            }
-            &:nth-child(1) {
-              position: absolute;
-              > img {
-                width: 30%;
-                top: 250px;
-              }
-            }
-          }
-        }
-      }
-    }
-    section.PARTNERS {
-      ul {
-        width: 700px;
-        li {
-        }
-      }
-    }
-    footer {
-      .layout {
-        flex-direction: column;
-        .right {
-          background-color: #147;
-          display: flex;
-          justify-content: left;
-          align-items: flex-start;
-          flex-direction: row;
-        }
-      }
-    }
-  }
-}
+// /* 화면 너비 0~ 768px */
+// @media (max-width: 768px) {
+//   body {
+//     font-size: 12px;
+//     header {
+//       background-color: #147;
+//       .inner {
+//         h1 {
+//         }
+//         nav {
+//           display: none;
+//           ul {
+//             li {
+//               margin: 1rem;
+//               a {
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//     section.main_VIDEO {
+//       h2 {
+//         font-size: 36px;
+//         line-height: 50px;
+//       }
+//     }
+//     section.PROMO {
+//       video {
+//         width: 90%;
+//       }
+//     }
+//     section.ROADMAP {
+//       article {
+//         width: 90%;
+//         .title {
+//           button {
+//           }
+//         }
+//         ul {
+//           li {
+//             p {
+//             }
+//             &:nth-child(1) {
+//               position: absolute;
+//               > img {
+//                 width: 30%;
+//                 top: 250px;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//     section.PARTNERS {
+//       ul {
+//         width: 700px;
+//         li {
+//         }
+//       }
+//     }
+//     footer {
+//       .layout {
+//         flex-direction: column;
+//         .right {
+//           background-color: #147;
+//           display: flex;
+//           justify-content: left;
+//           align-items: flex-start;
+//           flex-direction: row;
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,13 +1,7 @@
 // 디바이스 사이즈
-$desktop: 1400px;
 $laptop: 1020px;
 $tablet: 768px;
 
-@mixin desktop {
-  @media (max-width: #{$desktop}) {
-    @content;
-  }
-}
 @mixin laptop {
   @media (max-width: #{$laptop}) {
     @content;
@@ -32,16 +26,10 @@ $tablet: 768px;
   color: var(--pointText);
 }
 
-html {
-  @include desktop {
-    font-size: 16px;
-  }
-  @include laptop {
-    font-size: 14px;
-  }
-  @include tablet {
-    font-size: 12px;
-  }
+@mixin centerLayoutStyle {
+  width: 100%;
+  max-width: $laptop;
+  margin: auto;
 }
 
 // header 영역
@@ -54,19 +42,26 @@ header {
   @include center();
   > .inner {
     @include center();
+    @include centerLayoutStyle();
+    justify-content: space-between;
     padding: 1.25rem;
 
     > h1 {
-      margin-right: 6.25rem;
+      width: 13rem;
+
+      > a > img {
+        width: 100%;
+      }
     }
     > nav {
+      width: calc(100% - 15rem);
+
       > ul {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         > li {
-          margin-right: 6.25rem;
-          &:last-child {
-            margin-right: 0;
-          }
           > a {
             &:hover {
               @include text_hover();
@@ -78,51 +73,6 @@ header {
     // nav 클릭 후, 추가되는 클래스의 색상
     .onClick {
       @include text_hover();
-    }
-  }
-
-  @include laptop {
-    @include center();
-    background-color: #156;
-    > .inner {
-      @include center();
-      width: 80%;
-      > h1 {
-        margin-right: 2.25rem;
-      }
-      > nav {
-        > ul {
-          display: flex;
-          > li {
-            margin-right: 2.25rem;
-            &:last-child {
-              margin-right: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-  @include tablet {
-    background-color: #147;
-    > .inner {
-      @include center();
-      width: 50%;
-      background-color: #fff;
-      > h1 {
-        margin-right: 2.25rem;
-      }
-      > nav {
-        > ul {
-          display: flex;
-          > li {
-            margin-right: 2.25rem;
-            &:last-child {
-              margin-right: 0;
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -167,10 +117,14 @@ main {
     }
 
     > h2 {
-      font-size: 72px;
+      font-size: 4.5rem;
       font-weight: 600;
-      line-height: 108px;
-      margin-bottom: 68px;
+      line-height: 1.8;
+      margin-bottom: 4.25rem;
+
+      @include tablet() {
+        font-size: 2rem;
+      }
     }
 
     > .mouseScroll {
@@ -203,9 +157,12 @@ main {
   }
 
   > section.PROMO {
+    padding: 0 2rem;
+
     > video {
       margin-top: 2.1875rem;
-      width: 50%;
+      width: 100%;
+      max-width: 800px;
     }
   }
 
@@ -247,12 +204,17 @@ main {
   }
 
   > section.ROADMAP {
+    padding: 0 2rem;
     > article {
-      width: 70%;
-      height: 65vh;
+      width: 100%;
+      max-width: 800px;
       display: flex;
       border-radius: 1rem;
       background-color: #111;
+
+      @include tablet() {
+        flex-direction: column;
+      }
 
       > .title {
         display: block;
@@ -287,48 +249,44 @@ main {
         }
       }
 
-      > ul {
+      > .list {
         position: relative;
         width: calc(100% - 8.75rem);
-        height: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        display: none;
 
-        > li {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          padding: 2.625rem;
+        @include tablet() {
+          flex-direction: column;
+        }
 
-          > p {
+        &.active {
+          display: flex;
+        }
+
+        > ul {
+          width: 50%;
+          padding: 1rem;
+          box-sizing: border-box;
+
+          @include tablet() {
+            width: 100%;
+          }
+          > li {
             text-align: left;
-            font-size: 1em;
-            line-height: 2em;
+            font-size: 1rem;
+            line-height: 2;
+            list-style: disc;
           }
+        }
+        > img {
+          padding: 2rem 2rem 0 0;
+          width: 40%;
+          height: auto;
+          object-fit: contain;
 
-          > p:hover {
-            color: var(--pointText);
-          }
-
-          &:nth-child(1) {
-            position: absolute;
-
-            img {
-              position: absolute;
-              top: 3.4375rem;
-              right: 3.4375rem;
-            }
-          }
-
-          &:nth-child(2) {
-            position: absolute;
-          }
-
-          &:nth-child(3) {
-            position: absolute;
-
-            > p {
-              font-size: 2rem;
-              color: #666;
-            }
+          @include tablet() {
+            width: 80%;
           }
         }
       }
@@ -422,18 +380,19 @@ main {
 
     > ul {
       padding: 10px;
-      width: 90%;
+      width: 100%;
+      max-width: 1200px;
       @include center();
-      display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
 
       > li {
         color: #666;
         @include center();
-        width: 13.125rem;
-        padding: 3.75rem;
-        margin: 0.4688rem;
-        font-size: 2rem;
+        width: 14.6666667%;
+        padding: 2.5rem;
+        margin: 0.5rem;
+        font-size: 1.125rem;
         border-radius: 1rem;
         background-color: #161616;
       }
@@ -657,9 +616,6 @@ footer {
 
   img {
     width: 100%;
-
-    &:hover {
-    }
   }
 
   > .modal {
@@ -687,5 +643,37 @@ footer {
       font-weight: 600;
       color: #31f8ab;
     }
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 800px;
+  z-index: 100;
+  min-height: 10rem;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  > img {
+    width: 100%;
+  }
+
+  > p {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: red;
+    cursor: pointer;
   }
 }

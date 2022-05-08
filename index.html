@@ -116,37 +116,44 @@
           <button class="point2">Q3</button>
           <button class="point2">Q4</button>
         </div>
-        <ul>
-          <li>
-            <p>Minecraft supported</p>
-            <p>All 5,000 UNIVERSE minted</p>
-            <p>UNIVERSE rarity & distribution data separation completed</p>
-            <p>UNIVERSE syncing to update UNIVERSE on the blockchain</p>
-            <p>Open sourcemultiplayer server released</p>
-            <p>Cross-platform playable (Xbox, PS, Switch, Phones, Tablets)</p>
-            <p>COMMUNITY build-up</p>
-            <p>Compensation plans for UNIVERSE holders</p>
-            <img src="./img/03roadmap/loadMap.png" alt="로드맵" />
-          </li>
-          <li class="hidden">
-            <p>Payments dApp for in-game $KUT transaction</p>
-            <p>Support for UNIVERSE owner created P2E systems</p>
-            <p>Support for playable 3D NFT character partnerships</p>
-            <p>Support for playing GAME on KLAY UNIVERSE</p>
-            <p>Collaboration with Famous companies and Celebrities</p>
-            <p>Famous brand UNIVERSE is open</p>
-            <p>Full support&compensation to builders and creators</p>
-            <p>Full support for creations such as animations and webtoons</p>
-            <p>$KUT token Release</p>
-            <p>$KUT token will list CEX & DEX</p>
-            <p>Based on $KUT voting system and compensation plans for $KUT token holders</p>
-            <p>AIRDROPS $KUT for UNIVERSE holders</p>
-            <p>Partnership and Collaboration with other KLAYTN projects</p>
-          </li>
-          <li class="hidden">
-            <p>To be announced</p>
-          </li>
-        </ul>
+
+        <div class="list active">
+          <ul>
+            <li>Minecraft supported</li>
+            <li>All 5,000 UNIVERSE minted</li>
+            <li>UNIVERSE rarity & distribution data separation completed</li>
+            <li>UNIVERSE syncing to update UNIVERSE on the blockchain</li>
+            <li>Open sourcemultiplayer server released</li>
+            <li>Cross-platform playable (Xbox, PS, Switch, Phones, Tablets)</li>
+            <li>COMMUNITY build-up</li>
+            <li>Compensation plans for UNIVERSE holders</li>
+          </ul>
+          <img src="./img/03roadmap/loadMap.png" alt="로드맵" />
+        </div>
+
+        <div class="list">
+          <ul>
+            <li>Payments dApp for in-game $KUT transaction</li>
+            <li>Support for UNIVERSE owner created P2E systems</li>
+            <li>Support for playable 3D NFT character partnerships</li>
+            <li>Support for playing GAME on KLAY UNIVERSE</li>
+            <li>Collaboration with Famous companies and Celebrities</li>
+            <li>Famous brand UNIVERSE is open</li>
+            <li>Full support&compensation to builders and creators</li>
+            <li>Full support for creations such as animations and webtoons</li>
+            <li>$KUT token Release</li>
+            <li>$KUT token will list CEX & DEX</li>
+            <li>Based on $KUT voting system and compensation plans for $KUT token holders</li>
+            <li>AIRDROPS $KUT for UNIVERSE holders</li>
+            <li>Partnership and Collaboration with other KLAYTN projects</li>
+         </ul>
+        </div>
+
+        <div class="list">
+          <ul>
+            <li>To be announced</li>
+          </ul>
+        </div>
       </article>
     </section>
     <!-- ROADMAP 종료 -->
@@ -385,7 +392,7 @@
         User Centered & Participatory
       </p>
       <div class="swiper">
-        <ul class="swiper-wrapper">
+        <ul class="swiper-wrapper slideList">
           <li class="swiper-slide"><img src="./img/06community/community_01.png" alt="communityImg" /></li>
           <li class="swiper-slide"><img src="./img/06community/community_02.png" alt="communityImg" /></li>
           <li class="swiper-slide"><img src="./img/06community/community_03.png" alt="communityImg" /></li>
@@ -402,6 +409,28 @@
     </section>
     <!-- COMMUNITY 종료 -->
   </main>
+
+  <div class="modal">
+    <img class="modalImage" src="" alt="" />
+    <p class="close">x</p>
+  </div>
+
+  <script>
+    let imgSrc;
+    const modal = document.querySelector('.modal');
+    const slideList = document.querySelector('.slideList');
+    const closeBtn = document.querySelector('.close');
+
+    slideList.addEventListener('click', (event)=>{
+      imgSrc = event.target.currentSrc;
+      document.querySelector(".modalImage").src=imgSrc;
+      modal.classList.add('active');
+    })
+
+    closeBtn.addEventListener('click', ()=>{
+      modal.classList.remove('active');      
+    })
+  </script>
   <!-- main 종료 -->
 
   <!-- footer 시작 -->

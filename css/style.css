@@ -1,21 +1,3 @@
-@media (max-width: 1400px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 1020px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 12px;
-  }
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -43,25 +25,37 @@ header > .inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  max-width: 1020px;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1.25rem;
 }
 
 header > .inner > h1 {
-  margin-right: 6.25rem;
+  width: 13rem;
+}
+
+header > .inner > h1 > a > img {
+  width: 100%;
+}
+
+header > .inner > nav {
+  width: calc(100% - 15rem);
 }
 
 header > .inner > nav > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-header > .inner > nav > ul > li {
-  margin-right: 6.25rem;
-}
-
-header > .inner > nav > ul > li:last-child {
-  margin-right: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header > .inner > nav > ul > li > a:hover {
@@ -72,80 +66,6 @@ header > .inner > nav > ul > li > a:hover {
 header > .inner .onClick {
   cursor: pointer;
   color: var(--pointText);
-}
-
-@media (max-width: 1020px) {
-  header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: #156;
-  }
-  header > .inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 80%;
-  }
-  header > .inner > h1 {
-    margin-right: 2.25rem;
-  }
-  header > .inner > nav > ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  header > .inner > nav > ul > li {
-    margin-right: 2.25rem;
-  }
-  header > .inner > nav > ul > li:last-child {
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    background-color: #147;
-  }
-  header > .inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 50%;
-    background-color: #fff;
-  }
-  header > .inner > h1 {
-    margin-right: 2.25rem;
-  }
-  header > .inner > nav > ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  header > .inner > nav > ul > li {
-    margin-right: 2.25rem;
-  }
-  header > .inner > nav > ul > li:last-child {
-    margin-right: 0;
-  }
 }
 
 main > section {
@@ -197,10 +117,16 @@ main > section.main_VIDEO::after {
 }
 
 main > section.main_VIDEO > h2 {
-  font-size: 72px;
+  font-size: 4.5rem;
   font-weight: 600;
-  line-height: 108px;
-  margin-bottom: 68px;
+  line-height: 1.8;
+  margin-bottom: 4.25rem;
+}
+
+@media (max-width: 768px) {
+  main > section.main_VIDEO > h2 {
+    font-size: 2rem;
+  }
 }
 
 main > section.main_VIDEO > .mouseScroll {
@@ -253,9 +179,14 @@ main > section.main_VIDEO > .mouseScroll > p {
   font-size: 1rem;
 }
 
+main > section.PROMO {
+  padding: 0 2rem;
+}
+
 main > section.PROMO > video {
   margin-top: 2.1875rem;
-  width: 50%;
+  width: 100%;
+  max-width: 800px;
 }
 
 main > section.UNIVERSE > p {
@@ -295,14 +226,27 @@ main > section.UNIVERSE > button {
   margin-top: 3.75rem;
 }
 
+main > section.ROADMAP {
+  padding: 0 2rem;
+}
+
 main > section.ROADMAP > article {
-  width: 70%;
-  height: 65vh;
+  width: 100%;
+  max-width: 800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-radius: 1rem;
   background-color: #111;
+}
+
+@media (max-width: 768px) {
+  main > section.ROADMAP > article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 main > section.ROADMAP > article > .title {
@@ -339,50 +283,65 @@ main > section.ROADMAP > article > .title > .onClick:before {
   border-radius: 0.625rem;
 }
 
-main > section.ROADMAP > article > ul {
+main > section.ROADMAP > article > .list {
   position: relative;
   width: calc(100% - 8.75rem);
-  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: none;
 }
 
-main > section.ROADMAP > article > ul > li {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 2.625rem;
+@media (max-width: 768px) {
+  main > section.ROADMAP > article > .list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
-main > section.ROADMAP > article > ul > li > p {
+main > section.ROADMAP > article > .list.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main > section.ROADMAP > article > .list > ul {
+  width: 50%;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  main > section.ROADMAP > article > .list > ul {
+    width: 100%;
+  }
+}
+
+main > section.ROADMAP > article > .list > ul > li {
   text-align: left;
-  font-size: 1em;
-  line-height: 2em;
+  font-size: 1rem;
+  line-height: 2;
+  list-style: disc;
 }
 
-main > section.ROADMAP > article > ul > li > p:hover {
-  color: var(--pointText);
+main > section.ROADMAP > article > .list > img {
+  padding: 2rem 2rem 0 0;
+  width: 40%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-main > section.ROADMAP > article > ul > li:nth-child(1) {
-  position: absolute;
-}
-
-main > section.ROADMAP > article > ul > li:nth-child(1) img {
-  position: absolute;
-  top: 3.4375rem;
-  right: 3.4375rem;
-}
-
-main > section.ROADMAP > article > ul > li:nth-child(2) {
-  position: absolute;
-}
-
-main > section.ROADMAP > article > ul > li:nth-child(3) {
-  position: absolute;
-}
-
-main > section.ROADMAP > article > ul > li:nth-child(3) > p {
-  font-size: 2rem;
-  color: #666;
+@media (max-width: 768px) {
+  main > section.ROADMAP > article > .list > img {
+    width: 80%;
+  }
 }
 
 main > section.TEAM > p {
@@ -486,7 +445,8 @@ main > section.PARTNERS > p {
 
 main > section.PARTNERS > ul {
   padding: 10px;
-  width: 90%;
+  width: 100%;
+  max-width: 1200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -496,7 +456,9 @@ main > section.PARTNERS > ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -512,10 +474,10 @@ main > section.PARTNERS > ul > li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 13.125rem;
-  padding: 3.75rem;
-  margin: 0.4688rem;
-  font-size: 2rem;
+  width: 14.6666667%;
+  padding: 2.5rem;
+  margin: 0.5rem;
+  font-size: 1.125rem;
   border-radius: 1rem;
   background-color: #161616;
 }
@@ -850,5 +812,39 @@ footer .bottom .wrapper > p {
   font-size: 1.75rem;
   font-weight: 600;
   color: #31f8ab;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 800px;
+  z-index: 100;
+  min-height: 10rem;
+  display: none;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal > img {
+  width: 100%;
+}
+
+.modal > p {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
