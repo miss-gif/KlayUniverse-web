@@ -1,5 +1,5 @@
 // 디바이스 사이즈
-$laptop: 1020px;
+$laptop: 1420px;
 $tablet: 768px;
 
 @mixin laptop {
@@ -7,6 +7,7 @@ $tablet: 768px;
     @content;
   }
 }
+
 @mixin tablet {
   @media (max-width: #{$tablet}) {
     @content;
@@ -40,6 +41,7 @@ header {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
   @include center();
+
   > .inner {
     @include center();
     @include centerLayoutStyle();
@@ -53,12 +55,13 @@ header {
         width: 100%;
       }
     }
+
     > nav {
       width: calc(100% - 15rem);
 
       > ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
 
         > li {
@@ -70,6 +73,7 @@ header {
         }
       }
     }
+
     // nav 클릭 후, 추가되는 클래스의 색상
     .onClick {
       @include text_hover();
@@ -157,8 +161,6 @@ main {
   }
 
   > section.PROMO {
-    padding: 0 2rem;
-
     > video {
       margin-top: 2.1875rem;
       width: 100%;
@@ -176,6 +178,8 @@ main {
 
     > .swiper {
       width: 100%;
+      padding-left: 1rem;
+      padding-right: 5rem;
 
       > ul.swiper-wrapper {
         display: flex;
@@ -205,9 +209,11 @@ main {
 
   > section.ROADMAP {
     padding: 0 2rem;
+
     > article {
       width: 100%;
-      max-width: 800px;
+      max-width: 1100px;
+      padding: 3rem 0;
       display: flex;
       border-radius: 1rem;
       background-color: #111;
@@ -272,6 +278,7 @@ main {
           @include tablet() {
             width: 100%;
           }
+
           > li {
             text-align: left;
             font-size: 1rem;
@@ -279,6 +286,7 @@ main {
             list-style: disc;
           }
         }
+
         > img {
           padding: 2rem 2rem 0 0;
           width: 40%;
@@ -351,6 +359,7 @@ main {
         animation-duration: 15s; // 완료까지 걸리는 시간 설정
         animation-timing-function: linear; // 속도 곡선 설정
         animation-iteration-count: infinite; // 반복 설정
+
         > p {
           font-size: 2.25rem;
           font-weight: 300;
@@ -401,6 +410,7 @@ main {
 
   > section.COMMUNITY {
     padding: 10px;
+
     > p {
       font-size: 1.25rem;
       line-height: 2.5rem;
@@ -418,12 +428,14 @@ main {
           padding: 0.625rem;
           border-radius: 0.625rem;
           background-color: #000;
+
           > img {
             width: 100%;
           }
         }
       }
     }
+
     > button {
       margin-top: 3.125rem;
     }
@@ -464,12 +476,14 @@ footer {
 
     .wrapper {
       width: 100%;
+
       .layout {
         width: 80%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         margin-bottom: 5rem;
+
         .left {
           p {
             text-align: left;

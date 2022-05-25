@@ -26,7 +26,7 @@ header > .inner {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  max-width: 1020px;
+  max-width: 1420px;
   margin: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -50,9 +50,9 @@ header > .inner > nav > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -179,10 +179,6 @@ main > section.main_VIDEO > .mouseScroll > p {
   font-size: 1rem;
 }
 
-main > section.PROMO {
-  padding: 0 2rem;
-}
-
 main > section.PROMO > video {
   margin-top: 2.1875rem;
   width: 100%;
@@ -198,6 +194,8 @@ main > section.UNIVERSE > p {
 
 main > section.UNIVERSE > .swiper {
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 5rem;
 }
 
 main > section.UNIVERSE > .swiper > ul.swiper-wrapper {
@@ -232,7 +230,8 @@ main > section.ROADMAP {
 
 main > section.ROADMAP > article {
   width: 100%;
-  max-width: 800px;
+  max-width: 1100px;
+  padding: 3rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
