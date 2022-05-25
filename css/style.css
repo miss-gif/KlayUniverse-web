@@ -231,7 +231,6 @@ main > section.ROADMAP {
 main > section.ROADMAP > article {
   width: 100%;
   max-width: 1100px;
-  padding: 3rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,6 +284,7 @@ main > section.ROADMAP > article > .title > .onClick:before {
 main > section.ROADMAP > article > .list {
   position: relative;
   width: calc(100% - 8.75rem);
+  padding: 2rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -330,8 +330,7 @@ main > section.ROADMAP > article > .list > ul > li {
 }
 
 main > section.ROADMAP > article > .list > img {
-  padding: 2rem 2rem 0 0;
-  width: 40%;
+  width: 30%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;

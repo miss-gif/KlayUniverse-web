@@ -84,7 +84,7 @@ const swiper = new Swiper(".UNIVERSE .swiper", {
 // ROAD MAP 버튼 컨트롤
 
 const roadmapBtn = document.querySelectorAll("#ROADMAP>article>.title>button");
-const roadmapList = document.querySelectorAll("#ROADMAP>article>ul>li");
+const roadmapList = document.querySelectorAll("#ROADMAP>article>ul");
 
 roadmapBtn[0].addEventListener("click", function () {
   roadmapBtn[0].classList.add("onClick");
