@@ -1,7 +1,7 @@
 header {
   position: fixed;
   width: 100%;
-  padding: 1.25rem;
+  padding: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
   display: -webkit-box;
@@ -31,7 +31,7 @@ header > .inner {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 header > .inner > h1 {
@@ -182,7 +182,7 @@ main > section.main_VIDEO > .mouseScroll > p {
 main > section.PROMO > video {
   margin-top: 2.1875rem;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 main > section.UNIVERSE > p {
@@ -230,12 +230,12 @@ main > section.ROADMAP {
 
 main > section.ROADMAP > article {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-radius: 1rem;
-  background-color: #111;
+  background-color: #000;
 }
 
 @media (max-width: 768px) {
@@ -284,14 +284,8 @@ main > section.ROADMAP > article > .title > .onClick:before {
 main > section.ROADMAP > article > .list {
   position: relative;
   width: calc(100% - 8.75rem);
+  min-height: 500px;
   padding: 2rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  display: none;
 }
 
 @media (max-width: 768px) {
@@ -301,12 +295,6 @@ main > section.ROADMAP > article > .list {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-}
-
-main > section.ROADMAP > article > .list.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 main > section.ROADMAP > article > .list > ul {

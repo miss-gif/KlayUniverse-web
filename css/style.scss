@@ -37,7 +37,7 @@ $tablet: 768px;
 header {
   position: fixed;
   width: 100%;
-  padding: 1.25rem;
+  padding: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
   @include center();
@@ -46,7 +46,7 @@ header {
     @include center();
     @include centerLayoutStyle();
     justify-content: space-between;
-    padding: 1.25rem;
+    padding: 1rem;
 
     > h1 {
       width: 13rem;
@@ -164,7 +164,7 @@ main {
     > video {
       margin-top: 2.1875rem;
       width: 100%;
-      max-width: 800px;
+      max-width: 1000px;
     }
   }
 
@@ -212,10 +212,10 @@ main {
 
     > article {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1180px;
       display: flex;
       border-radius: 1rem;
-      background-color: #111;
+      background-color: #000;
 
       @include tablet() {
         flex-direction: column;
@@ -257,17 +257,13 @@ main {
       > .list {
         position: relative;
         width: calc(100% - 8.75rem);
+        min-height: 500px;
         padding: 2rem;
-        justify-content: space-between;
-        align-items: flex-start;
-        display: none;
+        // justify-content: space-between;
+        // align-items: flex-start;
 
         @include tablet() {
           flex-direction: column;
-        }
-
-        &.active {
-          display: flex;
         }
 
         > ul {
