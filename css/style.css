@@ -288,6 +288,19 @@ main > section.ROADMAP > article > .list {
   padding: 2rem;
 }
 
+main > section.ROADMAP > article > .list:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #156;
+}
+
 @media (max-width: 768px) {
   main > section.ROADMAP > article > .list {
     -webkit-box-orient: vertical;
