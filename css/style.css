@@ -34,6 +34,14 @@ header > .inner {
   padding: 1rem;
 }
 
+@media (max-width: 900px) {
+  header > .inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 header > .inner > h1 {
   width: 13rem;
 }
@@ -44,6 +52,12 @@ header > .inner > h1 > a > img {
 
 header > .inner > nav {
   width: calc(100% - 15rem);
+}
+
+@media (max-width: 900px) {
+  header > .inner > nav {
+    display: none;
+  }
 }
 
 header > .inner > nav > ul {
@@ -123,7 +137,7 @@ main > section.main_VIDEO > h2 {
   margin-bottom: 4.25rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   main > section.main_VIDEO > h2 {
     font-size: 2rem;
   }
@@ -182,7 +196,8 @@ main > section.main_VIDEO > .mouseScroll > p {
 main > section.PROMO > video {
   margin-top: 2.1875rem;
   width: 100%;
-  max-width: 1000px;
+  max-width: 62.5rem;
+  padding: 1.875rem;
 }
 
 main > section.UNIVERSE > p {

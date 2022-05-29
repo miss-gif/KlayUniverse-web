@@ -27,6 +27,7 @@ $tablet: 768px;
   color: var(--pointText);
 }
 
+// 중앙 정렬
 @mixin centerLayoutStyle {
   width: 100%;
   max-width: $laptop;
@@ -47,6 +48,9 @@ header {
     @include centerLayoutStyle();
     justify-content: space-between;
     padding: 1rem;
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
 
     > h1 {
       width: 13rem;
@@ -58,6 +62,9 @@ header {
 
     > nav {
       width: calc(100% - 15rem);
+      @media (max-width: 900px) {
+        display: none;
+      }
 
       > ul {
         display: flex;
@@ -83,7 +90,7 @@ header {
 
 // main 영역
 main {
-  // 공통 옵션
+  // 기본값
   > section {
     padding-top: 5rem;
     position: relative;
@@ -96,6 +103,8 @@ main {
       font-size: 3rem;
       font-weight: 600;
       line-height: 6rem;
+      @media (max-width: 900px) {
+      }
     }
   }
 
@@ -126,7 +135,7 @@ main {
       line-height: 1.8;
       margin-bottom: 4.25rem;
 
-      @include tablet() {
+      @media (max-width: 900px) {
         font-size: 2rem;
       }
     }
@@ -164,7 +173,8 @@ main {
     > video {
       margin-top: 2.1875rem;
       width: 100%;
-      max-width: 1000px;
+      max-width: 62.5rem;
+      padding: 1.875rem;
     }
   }
 
@@ -183,6 +193,8 @@ main {
 
       > ul.swiper-wrapper {
         display: flex;
+        @media (max-width: 900px) {
+        }
 
         > li.swiper-slide {
           padding: 0.9375rem 0.9375rem 0 0.9375rem;
